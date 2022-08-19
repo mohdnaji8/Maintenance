@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 @section('content')
-    <form action="{{route('orders.store')}}" method="POST">
+    <form action="{{route('departments.store')}}" method="POST">
         @csrf
-        @include('maintenance.orders.form')
+        @include('maintenance.departments.form')
         <div class="form-group">
             <button type="submit"  class="btn btn-primary font-weight-bold">حفظ </button>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\OrderController;
@@ -24,4 +25,6 @@ Route::get('/', function () {
 });
 
 //Route::get('/maintenance',[MaintenanceController::class, 'index']);
-Route::resource('/order',OrderController::class);
+
+Route::resource('/orders', OrderController::class);
+Route::resource('/departments', DepartmentController::class);
