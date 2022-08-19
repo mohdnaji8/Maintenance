@@ -22,413 +22,454 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>مصلحة المياه - الصيانة</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css"
-          rel="stylesheet"
-          type="text/css"/>
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css"
+        rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- Font awsom STYLES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="{{asset('')}}assets/global/plugins/datatables/datatables.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css"
-          rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/datatables/datatables.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet"
+        type="text/css" />
     <!-- date picker-->
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/clockface/css/clockface.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/fullcalendar/base.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/fullcalendar/css.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/clockface/css/clockface.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/fullcalendar/base.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/global/fullcalendar/css.css" rel="stylesheet" type="text/css" />
     <!-- form wizared -->
-    <link href="{{asset('')}}assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet"
-          type="text/css"/>
+    <link href="{{ asset('') }}assets/global/plugins/select2/css/select2.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
 
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet"
-          type="text/css"/>
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.css" rel="stylesheet"
+        type="text/css" />
 
 
     <!--  file upload -->
 
-    <link href="{{asset('')}}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet"
-          type="text/css"/>
+    <link href="{{ asset('') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet"
+        type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
 
 
     <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="{{asset('')}}assets/global/css/components-rtl.css" rel="stylesheet" id="style_components"
-          type="text/css"/>
-    <link href="{{asset('')}}assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/global/css/components-rtl.css" rel="stylesheet" id="style_components"
+        type="text/css" />
+    <link href="{{ asset('') }}assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME GLOBAL STYLES -->
 
 
     <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="{{asset('')}}assets/layouts/layout/css/layout-rtl.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/layouts/layout/css/themes/default-rtl.css" rel="stylesheet" type="text/css"
-          id="style_color"/>
-    <link href="{{asset('')}}assets/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/layouts/layout/css/layout-rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/layouts/layout/css/themes/default-rtl.css" rel="stylesheet" type="text/css"
+        id="style_color" />
+    <link href="{{ asset('') }}assets/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="{{asset('')}}assets/my/myFont.css" rel='stylesheet' type='text/css'>
-    <link href="{{asset('')}}assets/my/panel_.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/my/myFont.css" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('') }}assets/my/panel_.css" rel="stylesheet" type="text/css" />
     <!-- sweet alert -->
-    <link href="{{asset('')}}assets/pages/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/pages/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="favicon.ico" />
     <!-- add  css toastr -->
-    <link href="{{asset('')}}assets/pages/css/toastr.css" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('')}}assets/pages/css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('') }}assets/pages/css/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('') }}assets/pages/css/mystyle.css" rel="stylesheet" type="text/css" />
     <!-- end  css toastr -->
 </head>
 <!-- END HEAD -->
 
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <div class="page-header-inner ">
-        <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="<?=asset("index.php/jobs_c/")?>">
-                <img src="{{asset('')}}assets/layouts/layout/img/mun_logo2.JPG" alt="logo" class="logo-default" style="margin:0px; margin-right:-20px; height: 50px; width: 235px"/> </a>
-            <div class="menu-toggler sidebar-toggler">
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="<?= asset('index.php/jobs_c/') ?>">
+                    <img src="{{ asset('') }}assets/layouts/layout/img/mun_logo2.JPG" alt="logo"
+                        class="logo-default" style="margin:0px; margin-right:-20px; height: 50px; width: 235px" />
+                </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <span></span>
+                </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+                data-target=".navbar-collapse">
                 <span></span>
-            </div>
-        </div>
-        <!-- END LOGO -->
-        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
-           data-target=".navbar-collapse">
-            <span></span>
-        </a>
+            </a>
 
-        <!-- END RESPONSIVE MENU TOGGLER -->
-        <!-- BEGIN TOP NAVIGATION MENU -->
-        <div class="top-menu">
-            <ul class="nav navbar-nav pull-right">
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
 
-                <li class="dropdown dropdown-user">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                       data-close-others="true">
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                            data-close-others="true">
 
-                        <i class="icon-user"></i>
-                        <span class="username username-hide-on-mobile">
-							mohammed
-						</span>
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-default">
-                        <li>
-                            <a href="https://elogin.gov.ps/new/">
-                                <i class="icon-key"></i> تعديل كلمة المرور
-                            </a>
-                        </li>
-                        <li class="divider">
-                        </li>
-
-                        <li>
-                            <a href="<?php echo asset("Gedco_Apps/logout"); ?>">
-                                <i class="icon-logout"></i> Log Out </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- END USER LOGIN DROPDOWN -->
-                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-
-            </ul>
-        </div>
-        <!-- END TOP NAVIGATION MENU -->
-    </div>
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
-<!-- BEGIN HEADER & CONTENT DIVIDER -->
-<div class="clearfix"></div>
-<!-- END HEADER & CONTENT DIVIDER -->
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-    <!-- BEGIN SIDEBAR -->
-
-    <div class="page-sidebar-wrapper">
-        <!-- BEGIN SIDEBAR -->
-        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-        <div class="page-sidebar navbar-collapse collapse">
-            <!-- BEGIN SIDEBAR MENU -->
-            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-            <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
-                data-slide-speed="200" style="padding-top: 30px">
-                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-                <li class="sidebar-toggler-wrapper hide">
-                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler">
-                        <span></span>
-                    </div>
-                    <!-- END SIDEBAR TOGGLER BUTTON -->
-                </li>
-                <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-                <li class="sidebar-search-wrapper">
-                    <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-                    <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
-                    <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-                    <form class="sidebar-search  sidebar-search-bordered" action="page_general_search_3.html"
-                          method="POST">
-                        <a href="javascript:;" class="remove">
-                            <i class="icon-close"></i>
+                            <i class="icon-user"></i>
+                            <span class="username username-hide-on-mobile">
+                                mohammed
+                            </span>
+                            <i class="fa fa-angle-down"></i>
                         </a>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-								<a href="javascript:;" class="btn submit">
-									<i class="icon-magnifier"></i>
-								</a>
-							</span>
-                        </div>
-                    </form>
-                    <!-- END RESPONSIVE QUICK SEARCH FORM -->
-                </li>
-                <li> <a href="<?php echo asset("index.php/jobs_c/index");?>">
-                        <i class="fa fa-home"></i>
-                        الرئيسية
-                    </a>
-                </li>
-                <li class="nav-item start  selected">
-                    <a href="<?php echo asset("index.php/jobs_c/job_name");?>" class="nav-link nav-toggle">
-                        <i class=""></i>
-                        <span class="title">الحرف</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu ">
-                        <li>
-                            <a href="<?php echo asset("index.php/jobs_c/job_name");?>">
-                                <i class="fa fa-plus"></i>
-                                حرفة جديدة
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item start  selected">
-                    <a href="<?php echo asset("index.php/jobs_c/job_name");?>" class="nav-link nav-toggle")>
-                        <i class=""></i>
-                        <span class="title">المكلفين</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu ">
-                        <li>
-                            <a href="<?php echo asset("index.php/jobs_c/jobs_info");?>">
-                                <i class="fa fa-plus"></i>
-                                اضافة مكلف
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="https://elogin.gov.ps/new/">
+                                    <i class="icon-key"></i> تعديل كلمة المرور
+                                </a>
+                            </li>
+                            <li class="divider">
+                            </li>
 
+                            <li>
+                                <a href="<?php echo asset('Gedco_Apps/logout'); ?>">
+                                    <i class="icon-logout"></i> Log Out </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                    <!-- BEGIN QUICK SIDEBAR TOGGLER -->
 
-
-
-            <!-- END SIDEBAR MENU -->
-            <!-- END SIDEBAR MENU -->
-        </div>
-        <!-- END SIDEBAR -->
-    </div>
-    <!-- END SIDEBAR -->
-    <!-- BEGIN CONTENT -->
-
-    <div class="page-content-wrapper">
-        <div class="page-content">
-
-
-            <div class="caption font-red-sunglo page-title">
-                <i class=" icon-layers font-red"></i>
-                <span class="caption-subject font-red bold uppercase" style="font-size: 16px"> <?= $TITLE; ?>
-                                        </span>
+                </ul>
             </div>
-            <div class="page-bar">
-                <ul class="page-breadcrumb">
-                    <li>
-                        <i class="fa fa-home"></i>
-                        <a href="#"><?= $main_title; ?></a>
-                        <i class="fa fa-angle-left"></i>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"></div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+
+        <div class="page-sidebar-wrapper">
+            <!-- BEGIN SIDEBAR -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true"
+                    data-slide-speed="200" style="padding-top: 30px">
+                    <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                    <li class="sidebar-toggler-wrapper hide">
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <div class="sidebar-toggler">
+                            <span></span>
+                        </div>
+                        <!-- END SIDEBAR TOGGLER BUTTON -->
                     </li>
-                    <li>
-                        <a href="#"><?= $sub_title; ?></a>
-                        <i class="fa fa-angle-left"></i>
+                    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+                    <li class="sidebar-search-wrapper">
+                        <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                        <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                        <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                        <form class="sidebar-search  sidebar-search-bordered" action="page_general_search_3.html"
+                            method="POST">
+                            <a href="javascript:;" class="remove">
+                                <i class="icon-close"></i>
+                            </a>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <a href="javascript:;" class="btn submit">
+                                        <i class="icon-magnifier"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </form>
+                        <!-- END RESPONSIVE QUICK SEARCH FORM -->
                     </li>
-                    <li>
-                        <a href="#"><?= $sub_of_title; ?></a>
+                    <li> <a href="{{ route('orders.index') }}">
+                            <i class="fa fa-home"></i>
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item start  selected">
+                        <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>" class="nav-link nav-toggle">
+                            <i class=""></i>
+                            <span class="title">الحرف</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu ">
+                            <li>
+                                <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>">
+                                    <i class="fa fa-plus"></i>
+                                    حرفة جديدة
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item start  selected">
+                        <a href="#" class="nav-link nav-toggle">
+                            <i class=""></i>
+                            <span class="title">الأقسام</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu ">
+                            <li>
+                                <a href="{{ route('departments.index') }}">
+                                    <i class="fa fa-home"></i>
+                                    الأقسام
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('departments.create') }}">
+                                    <i class="fa fa-plus"></i>
+                                    قسم جديد
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item start  selected">
+                        <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>" class="nav-link nav-toggle")>
+                            <i class=""></i>
+                            <span class="title">المكلفين</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu ">
+                            <li>
+                                <a href="<?php echo asset('index.php/jobs_c/jobs_info'); ?>">
+                                    <i class="fa fa-plus"></i>
+                                    اضافة مكلف
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-                <div class="page-toolbar">
-                    <div class="btn-group pull-right">
 
+
+
+
+                <!-- END SIDEBAR MENU -->
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+
+        <div class="page-content-wrapper">
+            <div class="page-content">
+
+
+                <div class="caption font-red-sunglo page-title">
+                    <i class=" icon-layers font-red"></i>
+                    <span class="caption-subject font-red bold uppercase" style="font-size: 16px"> <?= $TITLE ?>
+                    </span>
+                </div>
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#"><?= $main_title ?></a>
+                            <i class="fa fa-angle-left"></i>
+                        </li>
+                        <li>
+                            <a href="#"><?= $sub_title ?></a>
+                            <i class="fa fa-angle-left"></i>
+                        </li>
+                        <li>
+                            <a href="#"><?= $sub_of_title ?></a>
+                        </li>
+                    </ul>
+                    <div class="page-toolbar">
+                        <div class="btn-group pull-right">
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT-->
-            <div class="row">
-                <div class="col-sm-12" style="margin-top: 20px">
-                    @yield('content')
+                <!-- END PAGE HEADER-->
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 20px">
+                        @yield('content')
+                    </div>
                 </div>
+                <!-- END PAGE CONTENT-->
             </div>
-            <!-- END PAGE CONTENT-->
+        </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
+        <a href="javascript:;" class="page-quick-sidebar-toggler">
+            <i class="icon-login"></i>
+        </a>
+        <!-- END QUICK SIDEBAR -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer text-center">
+        <div class="page-footer-inner text-center"> <?php echo date('Y'); ?> &copy; شركة توزيع الكهرباء - محافظات غزة.
+
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
         </div>
     </div>
-    <!-- END CONTENT -->
-    <!-- BEGIN QUICK SIDEBAR -->
-    <a href="javascript:;" class="page-quick-sidebar-toggler">
-        <i class="icon-login"></i>
-    </a>
-    <!-- END QUICK SIDEBAR -->
-</div>
-<!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer text-center">
-    <div class="page-footer-inner text-center" > <?php echo date('Y'); ?> &copy; شركة توزيع الكهرباء - محافظات غزة.
-
-    </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
-</div>
-<!-- END FOOTER -->
-<!--[if lt IE 9]> -->
+    <!-- END FOOTER -->
+    <!--[if lt IE 9]> -->
 
 
-<!-- BEGIN CORE PLUGINS -->
-<script src="{{asset('')}}assets/global/plugins/respond.min.js"></script>
-<script src="{{asset('')}}assets/global/plugins/excanvas.min.js"></script>
-<![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="{{ asset('') }}assets/global/plugins/respond.min.js"></script>
+    <script src="{{ asset('') }}assets/global/plugins/excanvas.min.js"></script>
+    <![endif]-->
 
-<script src="{{asset('')}}assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+    type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 
-<script src="{{asset('')}}assets/global/fullcalendar/moment.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/fullcalendar/fullcalendar.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/fullcalendar/moment.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
-<script src="{{asset('')}}assets/global/fullcalendar/home.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/fullcalendar/home.js" type="text/javascript"></script>
 
-<script src="{{asset('')}}assets/global/scripts/datatable.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/holder.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/scripts/datatable.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery-bootpag/jquery.bootpag.min.js" type="text/javascript">
+</script>
+<script src="{{ asset('') }}assets/global/plugins/holder.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js"
+    type="text/javascript"></script>
 
 <!--  Date picker  -->
 
 
-<script src="{{asset('')}}assets/global/plugins/moment.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/clockface/js/clockface.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/moment.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/clockface/js/clockface.js" type="text/javascript"></script>
 
 
 <!--   form wizared -->
 
 
-<script src="{{asset('')}}assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery-validation/js/jquery.validate.js"
-        type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/jquery-validation/js/additional-methods.min.js"
-        type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"
-        type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery-validation/js/jquery.validate.js" type="text/javascript">
+</script>
+<script src="{{ asset('') }}assets/global/plugins/jquery-validation/js/additional-methods.min.js"
+    type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"
+    type="text/javascript"></script>
 
-<script src="{{asset('')}}assets/global/plugins/fuelux/js/spinner.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
-        type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/fuelux/js/spinner.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js"
+    type="text/javascript"></script>
 
 
 <!--  file  -->
 
-<script src="{{asset('')}}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"
-        type="text/javascript"></script><!-- END PAGE LEVEL PLUGINS -->
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"
+    type="text/javascript"></script><!-- END PAGE LEVEL PLUGINS -->
 
 
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
-<script src="{{asset('')}}assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/scripts/app.min.js" type="text/javascript"></script>
 
 <!-- END THEME GLOBAL SCRIPTS -->
 
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{asset('')}}assets/pages/scripts/components-bootstrap-touchspin.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/components-date-time-pickers.min.js"
-        type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/components-select2.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/form-wizard.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/my_JS/multi_sel.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/table-datatables-editable.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/ui-general.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/components-bootstrap-touchspin.js" type="text/javascript">
+</script>
+<script src="{{ asset('') }}assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript">
+</script>
+<script src="{{ asset('') }}assets/pages/scripts/components-select2.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/form-wizard.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/my_JS/multi_sel.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/table-datatables-editable.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/ui-general.min.js" type="text/javascript"></script>
 <!--       file upload      -->
 
 
-<script src="{{asset('')}}assets/pages/scripts/form-validation.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/global/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/pages/scripts/table-bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/form-validation.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript">
+</script>
+<script src="{{ asset('') }}assets/pages/scripts/table-bootstrap.min.js" type="text/javascript"></script>
 
 
 <!-- END PAGE LEVEL SCRIPTS -->
 
 
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
-<script src="{{asset('')}}assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
-<script src="{{asset('')}}assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 <!-- add js toastr -->
-<script src="{{asset('')}}assets/pages/scripts/toastr.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/scripts/toastr.js" type="text/javascript"></script>
 <!--sweet alert -->
-<script src="{{asset('')}}assets/pages/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/pages/sweetalert/sweetalert.min.js" type="text/javascript"></script>
 
 <!-- pulsate add -->
-<script src="{{asset('')}}assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="{{ asset('') }}assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
 
 
 
 <!-- end toastr -->
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         $('.multiselect-ui').multiselect({
             includeSelectAllOption: true
         });
@@ -436,7 +477,7 @@ License: You must have a valid license purchased only from themeforest(the above
 </script>
 
 <script>
-    jQuery(document).ready(function () {
+    jQuery(document).ready(function() {
 
 
         Metronic.init(); // init metronic core components
@@ -445,7 +486,7 @@ License: You must have a valid license purchased only from themeforest(the above
         Demo.init(); // init demo features
     });
     // block when ajax activity starts
-    $(document).ajaxStart(function () {
+    $(document).ajaxStart(function() {
         $.blockUI({
             message: '<h3>انتظر قليلا!</h3>  <div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
             css: {

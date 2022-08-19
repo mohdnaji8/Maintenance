@@ -15,15 +15,17 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('departmant')->nullable();
+            $table->unsignedBigInteger('department_id');
             $table->string('employee');
             $table->date('date');
-            $table->enum('building',[1,2,3]);
-            $table->enum('foor_number',[1,2,3]);
-            $table->enum('room_number',[1,2,3]);
+            $table->integer('building');
+            $table->string('floor_number');
+            $table->integer('room_number');
             $table->string('maintenance_type');
             $table->string('phone');
             $table->text('description');
+            $table->foreign('department_id')->references('id')
+                ->on('departments')->nullOnDelete();
             $table->timestamps();
         });
     }
