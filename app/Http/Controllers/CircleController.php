@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Circle;
 use App\Models\Department;
-use App\Models\Order;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class CircleController extends Controller
 {
     public function index()
     {
@@ -14,12 +14,9 @@ class OrderController extends Controller
         $data['TITLE'] = 'قسم الصيانة';
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
-        $data['sub_of_title'] = 'قسم الصيانة';
-        $orders = Order::all();
-        return view(
-            'maintenance.orders.index',
-            ['orders' => $orders]
-        )->with($data);
+        $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
+        $data['circles'] =  Circle::with('department')->get();
+        return view('maintenance.circles.index')->with($data);
     }
     public function create()
     {
@@ -28,16 +25,14 @@ class OrderController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
-
-        $data['order'] =  Order::all();
-        $data['departments'] = Department::all();
-        return view('maintenance.orders.create')->with($data);
+        $data['circle'] =  new Circle();
+        $data['departments'] =  Department::all();
+        return view('maintenance.circles.create')->with($data);
     }
-    //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
-        Order::create($request->all());
-        return redirect()->route('orders.index')
-            ->with('done', 'تمت اذافة الطلب بنجاح');
+        Circle::create($request->all());
+        return redirect()->route('circles.index')
+            ->with('done', 'تمت اضافة الدائرة بنجاح');
     }
 }

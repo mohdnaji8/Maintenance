@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CircleController;
 use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MaintenanceController;
@@ -28,3 +29,4 @@ Route::get('/', function () {
 
 Route::resource('/orders', OrderController::class);
 Route::resource('/departments', DepartmentController::class);
+Route::resource('/circles', CircleController::class);

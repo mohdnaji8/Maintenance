@@ -13,19 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('circles', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->unsignedBigInteger('department_id');
-            $table->string('employee');
-            $table->date('date');
-            $table->integer('building');
-            $table->string('floor_number');
-            $table->integer('room_number');
-            $table->string('maintenance_type');
-            $table->string('phone');
-            $table->text('description');
             $table->foreign('department_id')->references('id')
-                ->on('departments')->nullOnDelete();
+                ->on('departments')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -37,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('circles');
     }
 };

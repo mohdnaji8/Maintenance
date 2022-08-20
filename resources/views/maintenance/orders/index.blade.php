@@ -95,7 +95,7 @@
                             @foreach ($orders as $key => $order)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $order->departmant }}</td>
+                                    <td>{{ $order->requester_id }}</td>
                                     <td>{{ $order->employee }}</td>
                                     <td>{{ $order->date }}</td>
                                     <td>{{ $order->building }}</td>
