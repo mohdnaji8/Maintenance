@@ -104,6 +104,8 @@
                                     <td>{{ $order->maintenance_type }}</td>
                                     <td>{{ $order->phone }}</td>
                                     <td>{{ $order->description }}</td>
+                                    <td><a class="btn btn-primary">تعديل</a></td>
+                                    <td><a class="btn btn-danger">حذف</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

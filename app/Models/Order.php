@@ -9,6 +9,6 @@ class Order extends Model
 {
     protected $fillable = [
         'requester_id', 'employee', 'date', 'building',
-        'room_number', 'floor_number', 'maintenance_type', 'phone', 'description'
+        'room_number', 'floor_number', 'maintenance_type','circle_id', 'phone', 'description'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Circle;
 use App\Models\Department;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -29,8 +30,9 @@ class OrderController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
 
-        $data['order'] =  Order::all();
+        $data['order'] =  new Order();
         $data['departments'] = Department::all();
+        $data['circles'] = Circle::all();
         return view('maintenance.orders.create')->with($data);
     }
     //  return view('maintenance.orders.create', compact('order'))->with($data);

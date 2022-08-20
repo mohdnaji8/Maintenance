@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="col-md-3 control-label">رقم الغرفة</label>
+    <label class="col-md-3 control-label">رقم الطابق</label>
     <div class="col-md-3">
         <select name="floor_number" id="" style="width: 240px">
             <option value="">اختر الطابق</option>
