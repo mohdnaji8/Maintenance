@@ -228,16 +228,22 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                     </li>
                     <li class="nav-item start  selected">
-                        <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>" class="nav-link nav-toggle">
+                        <a href="{{ route('circles.index') }}" class="nav-link nav-toggle">
                             <i class=""></i>
-                            <span class="title">الحرف</span>
+                            <span class="title">الدوائر</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu ">
                             <li>
-                                <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>">
+                                <a href="{{ route('circles.index') }}">
+                                    <i class="fa fa-home"></i>
+                                    الدوائر
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('circles.create') }}">
                                     <i class="fa fa-plus"></i>
-                                    حرفة جديدة
+                                    دائرة جديدة
                                 </a>
                             </li>
                         </ul>
@@ -262,6 +268,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </a>
                             </li>
                         </ul>
+
                     </li>
                     <li class="nav-item start  selected">
                         <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>" class="nav-link nav-toggle")>

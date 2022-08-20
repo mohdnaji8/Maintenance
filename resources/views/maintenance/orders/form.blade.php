@@ -2,12 +2,25 @@
     <div class="form-group">
         <label class="col-md-3 control-label">القسم الطالب للصيانة </label>
         <div class="col-md-3">
-            <select name="department_id" id="" style="width: 240px">
+            <select name="requester_id" id="" style="width: 240px">
                 <option value="">اختر القسم</option>
                 @foreach ($departments as $department)
                     <option value="{{ $department->id }}"
-                        {{ old('department_id', $order->department_id) == $department->id ? 'selected' : '' }}>
+                        {{ old('requester_id', $order->requester_id) == $department->id ? 'selected' : '' }}>
                         {{ $department->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label">الدائرة </label>
+        <div class="col-md-3">
+            <select name="circle_id" id="" style="width: 240px">
+                <option value="">اختر الدائرة</option>
+                @foreach ($circles as $circle)
+                    <option value="{{ $circle->id }}"
+                        {{ old('circle_id', $order->circle_id) == $circle->id ? 'selected' : '' }}>
+                        {{ $circle->name }}</option>
                 @endforeach
             </select>
         </div>
