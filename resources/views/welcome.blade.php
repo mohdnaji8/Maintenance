@@ -342,7 +342,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('')}}assets/global/fullcalendar/moment.min.js" type="text/javascript"></script>
 <script src="{{asset('')}}assets/global/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
-<script src="{{asset('')}}assets/global/fullcalendar/home.js" type="text/javascript"></script>
+<script src="{{asset('')}}assets/global/fullcalendar/dashboard.js" type="text/javascript"></script>
 
 <script src="{{asset('')}}assets/global/scripts/datatable.js" type="text/javascript"></script>
 <script src="{{asset('')}}assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>

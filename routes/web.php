@@ -1,10 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CircleController;
 use App\Http\Controllers\DepartmentController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MaintenanceController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,13 @@ use App\Http\Controllers\OrderController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 
 Route::get('/', function () {
     $data['content'] = 'index';
@@ -27,12 +34,17 @@ Route::get('/', function () {
 
 //Route::get('/maintenance',[MaintenanceController::class, 'index']);
 
-Route::resource('/orders', OrderController::class);
+
+//Route::resource('/orders', OrderController::class);
 Route::resource('/departments', DepartmentController::class);
 Route::resource('/circles', CircleController::class);
 
-
-Route::group(['middleware' => ['auth:web','isAdmin'], 'prefix' => 'admin'], function () {
+Route::get('/orders/create',[ OrderController::class,'create'])->name('orders.create');
+Route::post('/orders/store',[ OrderController::class,'store'])->name('orders.store');
+Route::get('/orders',[ AuthenticatedSessionController::class,'create']);
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+    Route::get('/orders',[ OrderController::class,'index'])->name('orders.index');
+    Route::get('/orders/create',[ OrderController::class,'create'])->name('orders.create');
+    Route::post('/orders/store',[ OrderController::class,'store'])->name('orders.store');
 
 });
-

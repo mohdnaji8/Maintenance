@@ -136,32 +136,44 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
-
+                    @if(Auth::user())
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                             data-close-others="true">
 
                             <i class="icon-user"></i>
                             <span class="username username-hide-on-mobile">
-                                mohammed
+
+                                    {{ Auth::user()->name }}
+
                             </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
-                            <li>
-                                <a href="https://elogin.gov.ps/new/">
-                                    <i class="icon-key"></i> تعديل كلمة المرور
-                                </a>
-                            </li>
                             <li class="divider">
                             </li>
 
-                            <li>
-                                <a href="<?php echo asset('Gedco_Apps/logout'); ?>">
-                                    <i class="icon-logout"></i> Log Out </a>
+                            <li >
+                                <div style="margin-right: 10%">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <x-dropdown-link :href="route('logout')"
+                                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                        </x-dropdown-link>
+                                    </form>
+                                </div>
+
                             </li>
                         </ul>
                     </li>
+                    @else
+                        <div style="margin-top: 10%">
+                            <a href="{{route('login')}}" class="btn green">Login</a>
+                        </div>
+
+                    @endif
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
 
