@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('maintenance_type');
             $table->string('phone');
             $table->text('description');
+            $table->integer('active')->default(1);
             $table->foreign('circle_id')->references('id')
                 ->on('circles')->cascadeOnDelete();
             $table->foreign('requester_id')->references('id')

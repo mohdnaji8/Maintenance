@@ -33,11 +33,6 @@
                                     tabindex="0" class="sorting_asc">
                                     الدائرة
                                 </th>
-                                <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
-                                    style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
-                                    tabindex="0" class="sorting_asc">
-                                    القسم
-                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +40,6 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $circle->name }}</td>
-                                    <td>{{ $circle->department->name }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

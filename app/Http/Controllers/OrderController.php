@@ -16,6 +16,7 @@ class OrderController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
+        $data['departments'] = Department::all();
         $orders = Order::all();
         return view(
             'maintenance.orders.index',

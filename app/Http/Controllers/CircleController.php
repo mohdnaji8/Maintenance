@@ -15,7 +15,7 @@ class CircleController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
-        $data['circles'] =  Circle::with('department')->get();
+        $data['circles'] =  Circle::all();
         return view('maintenance.circles.index')->with($data);
     }
     public function create()

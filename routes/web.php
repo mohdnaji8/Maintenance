@@ -30,3 +30,9 @@ Route::get('/', function () {
 Route::resource('/orders', OrderController::class);
 Route::resource('/departments', DepartmentController::class);
 Route::resource('/circles', CircleController::class);
+
+
+Route::group(['middleware' => ['auth:web','isAdmin'], 'prefix' => 'admin'], function () {
+
+});
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Circle;
 use App\Models\Department;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,7 @@ class DepartmentController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
         $data['department'] = new Department();
+        $data['circles'] =  Circle::all();
         return view('maintenance.departments.create')->with($data);
     }
 

@@ -222,7 +222,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         </form>
                         <!-- END RESPONSIVE QUICK SEARCH FORM -->
                     </li>
-                    <li> <a href="{{ route('orders.index') }}">
+                    <li>
+                        <a href="#">
                             <i class="fa fa-home"></i>
                             الرئيسية
                         </a>
@@ -271,16 +272,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     </li>
                     <li class="nav-item start  selected">
-                        <a href="<?php echo asset('index.php/jobs_c/job_name'); ?>" class="nav-link nav-toggle")>
+                        <a href="{{ route('orders.index') }}" class="nav-link nav-toggle")>
                             <i class=""></i>
-                            <span class="title">المكلفين</span>
+                            <span class="title">طلبات الصيانة</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu ">
                             <li>
-                                <a href="<?php echo asset('index.php/jobs_c/jobs_info'); ?>">
+                                <a href="{{ route('orders.index') }}">
                                     <i class="fa fa-plus"></i>
-                                    اضافة مكلف
+                                    طلبات الصيانة
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('orders.create') }}">
+                                    <i class="fa fa-plus"></i>
+                                    اضافة طلب
                                 </a>
                             </li>
                         </ul>

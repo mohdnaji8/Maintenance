@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['circle_id','name'];
 
-    public function circles()
+    public function circle()
     {
-        return $this->hasMany(Circle::class, 'department_id', 'id');
+        return $this->belongsTo(Circle::class);
     }
 }
