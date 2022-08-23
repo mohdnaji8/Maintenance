@@ -110,8 +110,11 @@
                                         <span class="badge py-2 px-2 fs-7 badge-danger">غير فعال</span>
                                     @endif
                                 </td>
-                                <td><a class="btn green">عرض</a></td>
-                                <td><a class="btn btn-danger">حذف</a></td>
+                                <td>
+                                    <button  data-toggle="modal" data-target="#editModal" class="btn editingTRbutton btn-circle green btn-sm ">
+                                        <i class="fa fa-edit"></i> تعديل </button >
+                                </td>
+                                <td><a class="btn btn-danger btn-circle btn-sm "> <i class="fa fa-trash"></i> حذف</a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -121,8 +124,84 @@
             </div>
         </div>
     </div>
+
+    <!--Start view Modal-->
+    <!--Start view Modal-->
+    <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">تعديل حرفة</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <form action="" method="post" id="updat_modal">
+                    <div class="modal-body" style="margin-bottom: 90px">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">اسم الحرفة</label>
+                            <div class="col-md-9">
+                                <input type="text" name="job_name" id="job_name" class="form-control" placeholder="Enter text">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">الضريبة السنوية</label>
+                            <div class="col-md-9">
+                                <input type="text" name="annual_tax" id="annual_tax" class="form-control" placeholder="Enter text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">ضريبة النظافة</label>
+                            <div class="col-md-9">
+                                <input type="text" name="cleaningFees" id="cleaningFees" class="form-control" placeholder="Enter text">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">إغلاق</button>
+                        <button type="submit" id="add_job" class="btn btn-primary  font-weight-bold">تعديل </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end view Modal-->
+    <!--end view Modal-->
+
     <!-- END EXAMPLE TABLE PORTLET-->
     <script src="{{ asset('') }}assets/jquery-3.0.0.js"></script>
     <script src="{{ asset('') }}assets/pages/scripts/jobs-datatable.js"></script>
+    <script>
+        /*-- ------------------                 Modal                    ------------------ */
+        $(function() {
+            //Take the data from the TR during the event button
+            $('table').on('click', 'button.editingTRbutton',function (ele) {
+                //the <tr> variable is use to set the parentNode from "ele
+                var tr = ele.target.parentNode.parentNode;
+
+                //I get the value from the cells (td) using the parentNode (var tr)
+
+                var job_name = tr.cells[1].textContent;
+                var annual_tax = tr.cells[2].textContent;
+                var cleaningFees = tr.cells[3].textContent;
+                var id = tr.cells[4].textContent;
+                var url = $('#base_url').val();
+                //$('#updat_modal').attr('action').val(url);
+                //Prefill the fields with the gathered information
+                $('#job_name').val(job_name);
+                $('#annual_tax').val(annual_tax);
+                $('#cleaningFees').val(cleaningFees);
+
+                //If you need to update the form data and change the button link
+                $("form#updat_modal").attr('action', url+'update_job/'+id);
+                //$("a#saveModalButton").attr('href', window.location.href+'/update/'+id);
+            });
+        });
+    </script>
+
+
 @endsection
 @extends('layouts.layout')
