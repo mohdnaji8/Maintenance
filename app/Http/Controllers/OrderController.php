@@ -17,7 +17,9 @@ class OrderController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
         $data['departments'] = Department::all();
-        $orders = Order::all();
+        // $order =  new Order();
+        // $data['department'] = $order->department;
+        $orders = Order::with('circle','department')->get();
         return view(
             'maintenance.orders.index',
             ['orders' => $orders]
@@ -25,12 +27,12 @@ class OrderController extends Controller
     }
     public function create()
     {
+
         $data['content'] = 'index';
         $data['TITLE'] = 'قسم الصيانة';
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
-
         $data['order'] =  new Order();
         $data['departments'] = Department::all();
         $data['circles'] = Circle::all();
@@ -42,5 +44,17 @@ class OrderController extends Controller
         Order::create($request->all());
         return redirect()->route('orders.index')
             ->with('done', 'تمت اذافة الطلب بنجاح');
+    }
+
+    public function show(Order $order)
+    {
+        $data['content'] = 'index';
+        $data['TITLE'] = 'قسم الصيانة';
+        $data['main_title'] = ' مصحلة المياه';
+        $data['sub_title'] = 'الخدمات الاكترونية';
+        $data['sub_of_title'] = 'قسم الصيانة';
+        $data['department'] = $order->department;
+        $data['circle']    = $order->circle;
+        return view('maintenance.orders.show', ['order' => $order])->with($data);
     }
 }

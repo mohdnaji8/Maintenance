@@ -14,4 +14,8 @@ class Circle extends Model
     {
         return $this->hasMany(Department::class, 'circle_id', 'id')->withDefault();
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'circle_id', 'id')->withDefault();
+    }
 }
