@@ -32,14 +32,15 @@
     <div class="form-group">
         <label class="col-md-2 control-label">اسم طالب الصيانة </label>
         <div class="col-md-2">
-            <input type="text" name="employee" class="form-control" placeholder="Enter text">
+            <input type="text" name="employee" class="form-control" placeholder="Enter text"
+            value="{{$order->employee}}">
         </div>
     </div>
     <div class="col-md-1"></div>
     <div class="form-group">
         <label class="col-md-2 control-label">تاريخ الطلب </label>
         <div class="col-md-2">
-            <input type="date" name="date" class="form-control" placeholder="Enter text" style="width: 215px">
+            <input type="date" value="{{$order->date}}" name="date" class="form-control" placeholder="Enter text" style="width: 215px">
         </div>
     </div>
 </div>
@@ -47,7 +48,7 @@
     <div class="form-group">
         <label class="col-md-2 control-label">المبنى </label>
         <div class="col-md-2">
-            <input type="number" name="building" class="form-control" placeholder="Enter text">
+            <input type="number" name="building"  value="{{$order->building}}"  class="form-control" placeholder="Enter text">
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -68,14 +69,14 @@
     <div class="form-group">
         <label class="col-md-2 control-label">رقم الغرفة</label>
         <div class="col-md-2">
-            <input type="number" name="room_number" class="form-control" placeholder="Enter text">
+            <input type="number" name="room_number"   value="{{$order->room_number}}"  class="form-control" placeholder="Enter text">
         </div>
     </div>
     <div class="col-md-1"></div>
     <div class="form-group">
         <label class="col-md-2 control-label">نوع الصيانة </label>
         <div class="col-md-2">
-            <input type="text" name="maintenance_type" class="form-control" placeholder="Enter text" style="width: 215px">
+            <input type="text" name="maintenance_type"  value="{{$order->maintenance_type}}"  class="form-control" placeholder="Enter text" style="width: 215px">
         </div>
     </div>
 </div>
@@ -85,13 +86,13 @@
     <div class="form-group">
         <label class="col-md-2 control-label">رقم الهاتف </label>
         <div class="col-md-2">
-            <input type="number" name="phone" class="form-control" placeholder="Enter text">
+            <input type="number" name="phone"  value="{{$order->phone}}"  class="form-control" placeholder="Enter text">
         </div>
     </div>
     <div class="col-md-1"></div>
     <div class="form-group " >
         <label class="col-md-1 control-label">الوصف </label>
-        <textarea name="description" id="" cols="51" rows="5"></textarea>
+        <textarea name="description" id="" cols="51" rows="5"> {{$order->description}} </textarea>
     </div>
 </div>
 

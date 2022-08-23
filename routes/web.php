@@ -45,6 +45,8 @@ Route::get('/orders',[ AuthenticatedSessionController::class,'create']);
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::get('/orders',[ OrderController::class,'index'])->name('orders.index');
     Route::get('/orders/create',[ OrderController::class,'create'])->name('orders.create');
+    Route::get('/orders/{id}/edit',[ OrderController::class,'edit'])->name('orders.edit');
     Route::post('/orders/store',[ OrderController::class,'store'])->name('orders.store');
+    Route::post('/orders/{id}/update',[ OrderController::class,'update'])->name('orders.update');
 
 });

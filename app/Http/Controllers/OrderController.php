@@ -57,4 +57,24 @@ class OrderController extends Controller
         $data['circle']    = $order->circle;
         return view('maintenance.orders.show', ['order' => $order])->with($data);
     }
+    public function edit($id)
+    {
+        $data['content'] = 'index';
+        $data['TITLE'] = 'قسم الصيانة';
+        $data['main_title'] = ' مصحلة المياه';
+        $data['sub_title'] = 'الخدمات الاكترونية';
+        $data['sub_of_title'] = 'قسم الصيانة';
+        $order= Order::findOrFail($id);
+        $data['department'] = $order->department;
+        $data['departments'] = Department::all();
+        $data['circle']    = $order->circle;
+        $data['circles']    =Circle::all();
+        return view('maintenance.orders.edit', ['order' => $order])->with($data);
+    }
+    public function update(Request $request , Order $order)
+    {
+        Order::create($request->all());
+        return redirect()->route('orders.index')
+            ->with('done', 'تمت اذافة الطلب بنجاح');
+    }
 }
