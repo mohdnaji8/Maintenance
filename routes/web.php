@@ -20,7 +20,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
 Route::get('/', function () {
@@ -36,17 +36,17 @@ Route::get('/', function () {
 
 
 //Route::resource('/orders', OrderController::class);
-Route::resource('/departments', DepartmentController::class);
-Route::resource('/circles', CircleController::class);
 
-Route::get('/orders/create',[ OrderController::class,'create'])->name('orders.create');
-Route::post('/orders/store',[ OrderController::class,'store'])->name('orders.store');
-Route::get('/orders',[ AuthenticatedSessionController::class,'create']);
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
-    Route::get('/orders',[ OrderController::class,'index'])->name('orders.index');
-    Route::get('/orders/create',[ OrderController::class,'create'])->name('orders.create');
-    Route::get('/orders/{id}/edit',[ OrderController::class,'edit'])->name('orders.edit');
-    Route::post('/orders/store',[ OrderController::class,'store'])->name('orders.store');
-    Route::post('/orders/{id}/update',[ OrderController::class,'update'])->name('orders.update');
 
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
+Route::get('/orders', [AuthenticatedSessionController::class, 'create']);
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('/departments', DepartmentController::class);
+    Route::resource('/circles', CircleController::class);
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+    Route::get('/orders/{id}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+    Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
+    Route::post('/orders/{id}/update', [OrderController::class, 'update'])->name('orders.update');
 });

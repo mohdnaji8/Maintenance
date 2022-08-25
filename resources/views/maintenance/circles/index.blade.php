@@ -8,7 +8,7 @@
                         <div class="btn-group">
                             <!-- Button trigger modal-->
                             <button type="button" class="btn green" data-toggle="modal" data-target="#exampleModalLong">
-                                <a href="{{ route('circles.create') }}"> اضافة جديد</a>
+                                <a href="{{ route('admin.circles.create') }}"> اضافة جديد</a>
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>

@@ -32,7 +32,7 @@ class CircleController extends Controller
     public function store(Request $request)
     {
         Circle::create($request->all());
-        return redirect()->route('circles.index')
+        return redirect()->route('admin.circles.index')
             ->with('done', 'تمت اضافة الدائرة بنجاح');
     }
 }

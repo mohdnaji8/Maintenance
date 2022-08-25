@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $fillable = [
-        'requester_id', 'employee', 'date', 'building',
-        'room_number', 'floor_number', 'maintenance_type', 'circle_id', 'phone', 'description'
+        'requester_id', 'employee', 'date', 'building','maintenance_type',
+        'room_number', 'floor_number',  'circle_id', 'user_id', 'phone', 'description'
     ];
 
     public function circle()

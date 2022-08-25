@@ -241,20 +241,20 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                     </li>
                     <li class="nav-item start  selected">
-                        <a href="{{ route('circles.index') }}" class="nav-link nav-toggle">
+                        <a href="{{ route('admin.circles.index') }}" class="nav-link nav-toggle">
                             <i class=""></i>
                             <span class="title">الدوائر</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu ">
                             <li>
-                                <a href="{{ route('circles.index') }}">
+                                <a href="{{ route('admin.circles.index') }}">
                                     <i class="fa fa-home"></i>
                                     الدوائر
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('circles.create') }}">
+                                <a href="{{ route('admin.circles.create') }}">
                                     <i class="fa fa-plus"></i>
                                     دائرة جديدة
                                 </a>
@@ -269,13 +269,13 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                         <ul class="sub-menu ">
                             <li>
-                                <a href="{{ route('departments.index') }}">
+                                <a href="{{ route('admin.departments.index') }}">
                                     <i class="fa fa-home"></i>
                                     الأقسام
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('departments.create') }}">
+                                <a href="{{ route('admin.departments.create') }}">
                                     <i class="fa fa-plus"></i>
                                     قسم جديد
                                 </a>
@@ -284,20 +284,20 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     </li>
                     <li class="nav-item start  selected">
-                        <a href="{{ route('orders.index') }}" class="nav-link nav-toggle")>
+                        <a href="{{ route('admin.orders.index') }}" class="nav-link nav-toggle")>
                             <i class=""></i>
                             <span class="title">طلبات الصيانة</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu ">
                             <li>
-                                <a href="{{ route('orders.index') }}">
+                                <a href="{{ route('admin.orders.index') }}">
                                     <i class="fa fa-plus"></i>
                                     طلبات الصيانة
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('orders.create') }}">
+                                <a href="{{ route('admin.orders.create') }}">
                                     <i class="fa fa-plus"></i>
                                     اضافة طلب
                                 </a>

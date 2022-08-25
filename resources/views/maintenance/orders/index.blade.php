@@ -7,7 +7,8 @@
                     <div class="col-md-6">
                         <div class="btn-group">
                             <!-- Button trigger modal-->
-                            <a class="btn green" href="{{ route('orders.create') }}"> اضافة جديد <i class="fa fa-plus"></i>
+                            <a class="btn green" href="{{ route('admin.orders.create') }}"> اضافة جديد <i
+                                    class="fa fa-plus"></i>
                             </a>
                         </div>
                     </div>
@@ -53,11 +54,11 @@
                                     class="sorting">
                                     رقم الغرفة
                                 </th>
-                                <th aria-label=" Points : activate to sort column ascending" style="width: 100px;"
+                                {{-- <th aria-label=" Points : activate to sort column ascending" style="width: 100px;"
                                     colspan="1" rowspan="1" aria-controls="sample_editable_1" tabindex="0"
                                     class="sorting">
-                                    نوع الصيانة
-                                </th>
+                                    فني الصيانة
+                                </th> --}}
                                 <th aria-label=" Points : activate to sort column ascending" style="width: 100px;"
                                     colspan="1" rowspan="1" aria-controls="sample_editable_1" tabindex="0"
                                     class="sorting">
@@ -83,8 +84,8 @@
                                     tabindex="0" class="sorting"> عرض
                                 </th>
                                 <th id="delete_th" aria-label=" Delete : activate to sort column ascending"
-                                    style="width: 81px;" colspan="1" rowspan="1"
-                                    aria-controls="sample_editable_1" tabindex="0" class="sorting"> حذف
+                                    style="width: 81px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
+                                    tabindex="0" class="sorting"> حذف
                                 </th>
                             </tr>
                         </thead>
@@ -99,7 +100,7 @@
                                     <td>{{ $order->building }}</td>
                                     <td>{{ $order->floor_number }}</td>
                                     <td>{{ $order->room_number }}</td>
-                                    <td>{{ $order->maintenance_type }}</td>
+                                    {{-- <td>{{ $order->user_id }}</td> --}}
                                     <td>{{ $order->phone }}</td>
                                     <td hidden>{{ $order->description }}</td>
                                     <td>
@@ -160,8 +161,8 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">المبنى:</label>
                             <div class="col-md-9">
-                                <input type="text" disabled name="building" id="building"
-                                    class="form-control" placeholder="Enter text">
+                                <input type="text" disabled name="building" id="building" class="form-control"
+                                    placeholder="Enter text">
                             </div>
                         </div>
                         <div class="form-group">
@@ -174,15 +175,15 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">الغرفة:</label>
                             <div class="col-md-9">
-                                <input type="text" disabled name="room_number" id="room_number"
-                                    class="form-control" placeholder="Enter text">
+                                <input type="text" disabled name="room_number" id="room_number" class="form-control"
+                                    placeholder="Enter text">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">الهاتف:</label>
                             <div class="col-md-9">
-                                <input type="text" disabled name="phone" id="phone"
-                                    class="form-control" placeholder="Enter text">
+                                <input type="text" disabled name="phone" id="phone" class="form-control"
+                                    placeholder="Enter text">
                             </div>
                         </div>
                         <div class="form-group">
@@ -195,8 +196,8 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">تاريخ الصيانة: </label>
                             <div class="col-md-9">
-                                <input type="text" disabled name="date" id="date"
-                                       class="form-control" placeholder="Enter text">
+                                <input type="text" disabled name="date" id="date" class="form-control"
+                                    placeholder="Enter text">
                             </div>
                         </div>
                         <div class="form-group">
@@ -210,7 +211,8 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold"
                             data-dismiss="modal">إغلاق</button>
-                        <a href="" type="submit" id="edit_oder" class="btn btn-primary  font-weight-bold">تعديل </a>
+                        <a href="" type="submit" id="edit_oder" class="btn btn-primary  font-weight-bold">تعديل
+                        </a>
                     </div>
                 </form>
             </div>
@@ -218,7 +220,7 @@
     </div>
     <!--end view Modal-->
     <!--end view Modal-->
-    <input id="base_url" type="text" hidden value="{{asset('')}}">
+    <input id="base_url" type="text" hidden value="{{ asset('') }}">
     <!-- END EXAMPLE TABLE PORTLET-->
     <script src="{{ asset('') }}assets/jquery-3.0.0.js"></script>
     <script src="{{ asset('') }}assets/pages/scripts/jobs-datatable.js"></script>
@@ -243,7 +245,7 @@
                 var date = tr.cells[10].textContent.replace(/\s+/g, '');
                 var id = tr.cells[11].textContent.replace(/\s+/g, '');
 
-                var url =$('#base_url').val();
+                var url = $('#base_url').val();
 
                 $('#department').val(department);
                 $('#employee').val(employee);
@@ -256,7 +258,7 @@
                 $('#date').val(date);
 
                 //If you need to update the form data and change the button link
-                $("a#edit_oder").attr('href', url+'admin/orders/'+id+'/edit/');
+                $("a#edit_oder").attr('href', url + 'admin/orders/' + id + '/edit/');
                 //$("a#saveModalButton").attr('href', window.location.href+'/update/'+id);
             });
         });

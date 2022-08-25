@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <form action="{{ route('circles.store') }}" method="POST">
+    <form action="{{ route('admin.circles.store') }}" method="POST">
         @csrf
         @include('maintenance.circles.form')
         <div class="form-group">

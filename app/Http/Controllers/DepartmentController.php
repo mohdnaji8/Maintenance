@@ -50,7 +50,7 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         Department::create($request->all());
-        return redirect()->route('departments.index')
+        return redirect()->route('admin.departments.index')
             ->with('done', 'تمت اضافة الطلب بنجاح');
     }
 

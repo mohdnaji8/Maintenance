@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('requester_id');
             $table->unsignedBigInteger('circle_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('employee');
             $table->date('date');
             $table->integer('building');
@@ -30,6 +31,8 @@ return new class extends Migration
                 ->on('circles')->cascadeOnDelete();
             $table->foreign('requester_id')->references('id')
                 ->on('departments')->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')
+                ->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Circle;
 use App\Models\Department;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -19,7 +20,7 @@ class OrderController extends Controller
         $data['departments'] = Department::all();
         // $order =  new Order();
         // $data['department'] = $order->department;
-        $orders = Order::with('circle','department')->get();
+        $orders = Order::with('circle', 'department')->get();
         return view(
             'maintenance.orders.index',
             ['orders' => $orders]
@@ -35,14 +36,17 @@ class OrderController extends Controller
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
         $data['order'] =  new Order();
         $data['departments'] = Department::all();
+        $data['users'] = User::all();
         $data['circles'] = Circle::all();
+
         return view('maintenance.orders.create')->with($data);
     }
     //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
         Order::create($request->all());
-        return redirect()->route('orders.index')
+
+        return redirect()->route('admin.orders.index')
             ->with('done', 'تمت اذافة الطلب بنجاح');
     }
 
@@ -64,14 +68,14 @@ class OrderController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
-        $order= Order::findOrFail($id);
+        $order = Order::findOrFail($id);
         $data['department'] = $order->department;
         $data['departments'] = Department::all();
         $data['circle']    = $order->circle;
-        $data['circles']    =Circle::all();
+        $data['circles']    = Circle::all();
         return view('maintenance.orders.edit', ['order' => $order])->with($data);
     }
-    public function update(Request $request , Order $order)
+    public function update(Request $request, Order $order)
     {
         Order::create($request->all());
         return redirect()->route('orders.index')

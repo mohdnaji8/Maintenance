@@ -33,14 +33,15 @@
         <label class="col-md-2 control-label">اسم طالب الصيانة </label>
         <div class="col-md-2">
             <input type="text" name="employee" class="form-control" placeholder="Enter text"
-            value="{{$order->employee}}">
+                value="{{ $order->employee }}">
         </div>
     </div>
     <div class="col-md-1"></div>
     <div class="form-group">
         <label class="col-md-2 control-label">تاريخ الطلب </label>
         <div class="col-md-2">
-            <input type="date" value="{{$order->date}}" name="date" class="form-control" placeholder="Enter text" style="width: 215px">
+            <input type="date" value="{{ $order->date }}" name="date" class="form-control"
+                placeholder="Enter text" style="width: 215px">
         </div>
     </div>
 </div>
@@ -48,10 +49,11 @@
     <div class="form-group">
         <label class="col-md-2 control-label">المبنى </label>
         <div class="col-md-2">
-            <input type="number" name="building"  value="{{$order->building}}"  class="form-control" placeholder="Enter text">
+            <input type="number" name="building" value="{{ $order->building }}" class="form-control"
+                placeholder="Enter text">
         </div>
     </div>
-    <div class="col-md-1"></div>
+
     <div class="form-group">
         <label class="col-md-2 control-label">رقم الطابق</label>
         <div class="col-md-2">
@@ -69,30 +71,52 @@
     <div class="form-group">
         <label class="col-md-2 control-label">رقم الغرفة</label>
         <div class="col-md-2">
-            <input type="number" name="room_number"   value="{{$order->room_number}}"  class="form-control" placeholder="Enter text">
+            <input type="number" name="room_number" value="{{ $order->room_number }}" class="form-control"
+                placeholder="Enter text">
         </div>
     </div>
-    <div class="col-md-1"></div>
     <div class="form-group">
-        <label class="col-md-2 control-label">نوع الصيانة </label>
+        <label class="col-md-2 control-label">رقم الطابق</label>
         <div class="col-md-2">
-            <input type="text" name="maintenance_type"  value="{{$order->maintenance_type}}"  class="form-control" placeholder="Enter text" style="width: 215px">
+            <select name="maintenance_type" id="" style="width: 215px">
+                <option value="">اختر نوع الصيانة</option>
+                <option value="تكييف" {{ $order->maintenance_type == 'تكييف' ? 'selected' : '' }}>تكييف</option>
+                <option value="سباكة" {{ $order->maintenance_type == 'سباكة' ? 'selected' : '' }}>سباكة</option>
+                <option value="كهرباء" {{ $order->maintenance_type == 'كهرباء' ? 'selected' : '' }}>كهرباء</option>
+                <option value="هاتف" {{ $order->maintenance_type == 'هاتف' ? 'selected' : '' }}>هاتف</option>
+                <option value="نجارة" {{ $order->maintenance_type == 'نجارة' ? 'selected' : '' }}>نجارة</option>
+                <option value="دهان" {{ $order->maintenance_type == 'دهان' ? 'selected' : '' }}>دهان</option>
+                <option value="مصعد" {{ $order->maintenance_type == 'مصعد' ? 'selected' : '' }}>مصعد</option>
+                <option value="أخرى" {{ $order->maintenance_type == 'أخرى' ? 'selected' : '' }}>أخرى</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">>فني الصيانة </label>
+        <div class="col-md-2">
+            <select name="user_id" id="" style="width: 215px">
+                <option value="">فني الصيانة</option>
+                @foreach ($users as $user)
+                    <option value="{{ $user->id }}"
+                        {{ old('user_id', $order->user_id) == $user->id ? 'selected' : '' }}>
+                        {{ $user->name }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 </div>
 <div class="row">
-
-
     <div class="form-group">
         <label class="col-md-2 control-label">رقم الهاتف </label>
         <div class="col-md-2">
-            <input type="number" name="phone"  value="{{$order->phone}}"  class="form-control" placeholder="Enter text">
+            <input type="number" name="phone" value="{{ $order->phone }}" class="form-control"
+                placeholder="Enter text">
         </div>
     </div>
     <div class="col-md-1"></div>
-    <div class="form-group " >
+    <div class="form-group ">
         <label class="col-md-1 control-label">الوصف </label>
-        <textarea name="description" id="" cols="51" rows="5"> {{$order->description}} </textarea>
+        <textarea name="description" id="" cols="51" rows="5"> {{ $order->description }} </textarea>
     </div>
-</div>
 
+</div>
