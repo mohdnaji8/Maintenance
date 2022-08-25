@@ -23,14 +23,8 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 
-Route::get('/', function () {
-    $data['content'] = 'index';
-    $data['TITLE'] = 'قسم الحرف والمهن والصناعات';
-    $data['main_title'] = ' مصحلة المياه';
-    $data['sub_title'] = 'الخدمات الاكترونية';
-    $data['sub_of_title'] = 'قسم الصيانة';
-    return view('welcome')->with($data);
-});
+Route::get('/', [OrderController::class, 'index'])->middleware('auth');
+
 
 //Route::get('/maintenance',[MaintenanceController::class, 'index']);
 
