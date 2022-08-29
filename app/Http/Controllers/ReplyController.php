@@ -37,6 +37,7 @@ class ReplyController extends Controller
     //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
+        dd($request->all());
         Reply::create($request->all());
 
         return redirect()->route('admin.replies.index')

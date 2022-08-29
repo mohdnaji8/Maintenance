@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <form action="#" method="POST">
+    <form action="{{route('admin.replies.store')}}" method="POST">
         @csrf
         @include('maintenance.replies.form')
     </form>

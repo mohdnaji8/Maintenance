@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('/circles', CircleController::class);
     Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
     Route::get('/order/{order_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
+    Route::post('/replies/store', [ReplyController::class, 'store'])->name('replies.store');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     Route::get('/orders/{id}/edit', [OrderController::class, 'edit'])->name('orders.edit');
