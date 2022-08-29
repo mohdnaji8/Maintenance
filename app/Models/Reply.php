@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-    use HasFactory;
+    protected $fillable = ['done', 'foundation', 'maintenance_type', 'noticies'];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class, 'order_id', 'id');
+    }
 }

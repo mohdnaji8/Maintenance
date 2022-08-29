@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $fillable = [
-        'requester_id', 'employee', 'date', 'building','maintenance_type',
+        'requester_id', 'employee', 'date', 'building', 'maintenance_type',
         'room_number', 'floor_number',  'circle_id', 'user_id', 'phone', 'description'
     ];
 
@@ -20,5 +20,10 @@ class Order extends Model
     public function department()
     {
         return $this->belongsTo(Department::class, 'requester_id', 'id');
+    }
+
+    public function reply()
+    {
+        return $this->hasOne(Reply::class, 'order_id', 'id');
     }
 }

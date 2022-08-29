@@ -5,6 +5,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CircleController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ReplyController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +40,7 @@ Route::get('/orders', [AuthenticatedSessionController::class, 'create']);
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/circles', CircleController::class);
+    Route::resource('/replies', ReplyController::class);
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     Route::get('/orders/{id}/edit', [OrderController::class, 'edit'])->name('orders.edit');
