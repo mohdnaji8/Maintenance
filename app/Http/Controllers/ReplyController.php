@@ -22,7 +22,7 @@ class ReplyController extends Controller
             ['replies' => $replies]
         )->with($data);
     }
-    public function create()
+    public function create($order_id)
     {
 
         $data['content'] = 'index';
@@ -30,7 +30,8 @@ class ReplyController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
-        $data['order'] =  new Reply();
+        $data['reply'] =  new Reply();
+        $data['order_id'] = $order_id;
         return view('maintenance.replies.create')->with($data);
     }
     //  return view('maintenance.orders.create', compact('order'))->with($data);

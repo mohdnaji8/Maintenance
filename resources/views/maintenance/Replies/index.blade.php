@@ -2,19 +2,7 @@
     <!-- BEGIN EXAMPLE TABLE PORTLET-->
     <div class="portlet light portlet-fit bordered">
         <div class="portlet-body">
-            <div class="table-toolbar">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="btn-group">
-                            <!-- Button trigger modal-->
-                            <a class="btn green" href="{{ route('admin.orders.create') }}"> اضافة جديد <i
-                                    class="fa fa-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+      
             <div class="dataTables_wrapper no-footer" id="sample_editable_1_wrapper">
 
                 <div class="table">

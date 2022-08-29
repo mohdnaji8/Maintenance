@@ -317,12 +317,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     ردود طلبات الصيانة
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('admin.replies.create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    اضافة رد
-                                </a>
-                            </li>
+                        
                         </ul>
                     </li>
                 </ul>

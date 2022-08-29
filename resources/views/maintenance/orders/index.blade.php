@@ -12,18 +12,14 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="dataTables_wrapper no-footer" id="sample_editable_1_wrapper">
-
                 <div class="table">
                     <table aria-describedby="sample_editable_1_info" role="grid"
                         class="table table-striped table-hover table-bordered dataTable no-footer" id="sample_editable_1">
                         <thead>
-
                             <tr role="row">
-
                                 <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
                                     style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
                                     id="seq" tabindex="0" class="sorting_asc">
@@ -85,7 +81,7 @@
                                 </th>
                                 <th id="delete_th" aria-label=" Delete : activate to sort column ascending"
                                     style="width: 81px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
-                                    tabindex="0" class="sorting"> حذف
+                                    tabindex="0" class="sorting"> رد
                                 </th>
                             </tr>
                         </thead>
@@ -117,7 +113,9 @@
                                             class="btn editingTRbutton btn-circle green btn-sm ">
                                             <i class="fa fa-edit"></i> عرض </button>
                                     </td>
-                                    <td><a class="btn btn-danger btn-circle btn-sm "> <i class="fa fa-trash"></i> حذف</a>
+                                    <td><a class="btn btn-danger btn-circle btn-sm "
+                                            href="{{ route('admin.replies.create', $order->id) }}"> <i
+                                                class="fa fa-trash"></i> رد</a>x
                                     </td>
                                 </tr>
                             @endforeach
