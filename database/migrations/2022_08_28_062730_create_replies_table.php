@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')
                 ->on('orders')->cascadeOnDelete();
-            $table->boolean('done')->default(0);
+            $table->boolean('done');
             $table->string('foundation')->nullable();
             $table->string('maintenance_type')->nullable();
             $table->text('noticies');

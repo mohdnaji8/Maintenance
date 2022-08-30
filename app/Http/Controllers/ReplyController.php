@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Reply;
 use Illuminate\Http\Request;
 
@@ -16,11 +17,8 @@ class ReplyController extends Controller
         $data['sub_of_title'] = 'قسم الصيانة';
         // $order =  new Order();
         // $data['department'] = $order->department;
-        $replies = Reply::with('order')->get();
-        return view(
-            'maintenance.replies.index',
-            ['replies' => $replies]
-        )->with($data);
+        $replies = Reply::all();
+        return view('maintenance.replies.index', ['replies' => $replies])->with($data);
     }
     public function create($order_id)
     {
@@ -37,15 +35,26 @@ class ReplyController extends Controller
     //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
-        Reply::create($request->all());
-        // if (isset($request->done)) {
-        //     Reply::create($request->all());
-        // } else {
-        //     $request->done = 0;
-        //     Reply::create($request->all());
-        // }
+        $validated = $request->validate([
+            'noticies' => 'required']);
+      //  dd($request->order_id);
+        if (!isset($request->done))
+        {
+            $request->done = 0;
+        }
+        Order::where('id', $request->order_id)->update(['active'=>$request->done]);
+        if(Reply::where('order_id',$request->order_id)->exists()){
+            Reply::where('order_id', $request->order_id)->update([
+                'done'=>$request->done,
+                'foundation'=>$request->foundation,
+                'maintenance_type'=>$request->maintenance_type,
+                'noticies'=>$request->noticies,
+            ]);
+        }else{
+            Reply::create($request->all());
+        }
         return redirect()->route('admin.replies.index')
-            ->with('done', 'تمت اذافة الطلب بنجاح');
+            ->with('done', 'تمت اضافة الرد بنجاح');
     }
 
     public function show(Reply $reply)

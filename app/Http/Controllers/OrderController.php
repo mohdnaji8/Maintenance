@@ -76,6 +76,6 @@ class OrderController extends Controller
     {
         Order::create($request->all());
         return redirect()->route('orders.index')
-            ->with('done', 'تمت اذافة الطلب بنجاح');
+            ->with('done', 'تمت اضافة الطلب بنجاح');
     }
 }

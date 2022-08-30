@@ -24,7 +24,17 @@
                                 <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
                                     style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
                                     tabindex="0" class="sorting_asc">
-حالة الطلب                                </th>
+                                   الملاحظات
+                                </th>
+                                <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
+                                    style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
+                                    tabindex="0" class="sorting_asc">
+                                        حالة الطلب
+                                </th>
+                                <th id="delete_th" aria-label=" Delete : activate to sort column ascending"
+                                    style="width: 81px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
+                                    tabindex="0" class="sorting"> تعديل الرد
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,11 +45,18 @@
                                         {{ $reply->order->id }}
                                     </td>
                                     <td>
+                                        {{ $reply->noticies }}
+                                    </td>
+                                    <td>
                                         @if ($reply->done == 1)
-                                            <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-success ">تم الانجاز</span>
                                         @else
-                                            <span class="badge py-2 px-2 fs-7 badge-danger">غير فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-danger">غير منجز</span>
                                         @endif
+                                    </td>
+                                    <td><a class="btn btn-primary btn-circle btn-sm "
+                                           href="{{ route('admin.replies.create', $reply->order->id) }}">
+                                            <i class="fa fa-edit"></i> تعديل الرد</a>
                                     </td>
                                 </tr>
                             @endforeach
