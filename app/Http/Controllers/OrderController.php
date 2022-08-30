@@ -21,10 +21,7 @@ class OrderController extends Controller
         // $order =  new Order();
         // $data['department'] = $order->department;
         $orders = Order::with('circle', 'department')->get();
-        return view(
-            'maintenance.orders.index',
-            ['orders' => $orders]
-        )->with($data);
+        return view('maintenance.orders.index',['orders' => $orders])->with($data);
     }
     public function create()
     {

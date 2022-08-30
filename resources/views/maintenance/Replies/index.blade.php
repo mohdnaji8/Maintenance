@@ -2,7 +2,6 @@
     <!-- BEGIN EXAMPLE TABLE PORTLET-->
     <div class="portlet light portlet-fit bordered">
         <div class="portlet-body">
-      
             <div class="dataTables_wrapper no-footer" id="sample_editable_1_wrapper">
 
                 <div class="table">
@@ -34,6 +33,13 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>
                                         {{ $reply->order->id }}
+                                    </td>
+                                    <td>
+                                        @if ($reply->done == 1)
+                                            <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>
+                                        @else
+                                            <span class="badge py-2 px-2 fs-7 badge-danger">غير فعال</span>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

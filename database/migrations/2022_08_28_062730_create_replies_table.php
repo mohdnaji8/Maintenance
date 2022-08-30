@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('order_id')->references('id')
                 ->on('orders')->cascadeOnDelete();
             $table->boolean('done')->default(0);
-            $table->string('foundation');
-            $table->string('maintenance_type');
+            $table->string('foundation')->nullable();
+            $table->string('maintenance_type')->nullable();
             $table->text('noticies');
             $table->timestamps();
         });
