@@ -37,9 +37,13 @@ class ReplyController extends Controller
     //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
-        dd($request->all());
         Reply::create($request->all());
-
+        // if (isset($request->done)) {
+        //     Reply::create($request->all());
+        // } else {
+        //     $request->done = 0;
+        //     Reply::create($request->all());
+        // }
         return redirect()->route('admin.replies.index')
             ->with('done', 'تمت اذافة الطلب بنجاح');
     }

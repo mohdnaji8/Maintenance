@@ -24,6 +24,6 @@ class Order extends Model
 
     public function reply()
     {
-        return $this->hasOne(Reply::class, 'order_id', 'id');
+        return $this->hasMany(Reply::class, 'order_id', 'id');
     }
 }
