@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <form action="{{route('orders.update',$order->id)}}" method="POST">
+    <form action="{{route('admin.orders.update',$order->id)}}" method="POST">
         @csrf
         @include('maintenance.orders.form')
         <div class="form-group">

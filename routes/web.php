@@ -17,7 +17,6 @@ use App\Http\Controllers\ReplyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -48,4 +47,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/orders/{id}/edit', [OrderController::class, 'edit'])->name('orders.edit');
     Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
     Route::post('/orders/{id}/update', [OrderController::class, 'update'])->name('orders.update');
+    Route::post('/reply/buyorder', [ReplyController::class, 'buyorder_insert'])->name('buyorder.store');
 });

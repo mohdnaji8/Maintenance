@@ -60,7 +60,7 @@
                                     class="sorting">
                                     الهاتف
                                 </th>
-                                <th hidden aria-label=" Points : activate to sort column ascending" style="width: 100px;"
+                                <th aria-label=" Points : activate to sort column ascending" style="width: 100px;"
                                     colspan="1" rowspan="1" aria-controls="sample_editable_1" tabindex="0"
                                     class="sorting">
                                     الوصف
@@ -96,9 +96,9 @@
                                     <td>{{ $order->building }}</td>
                                     <td>{{ $order->floor_number }}</td>
                                     <td>{{ $order->room_number }}</td>
-                                    {{-- <td>{{ $order->user_id }}</td> --}}
+                                    <td hidden>{{ $order->id }}</td>
                                     <td>{{ $order->phone }}</td>
-                                    <td hidden>{{ $order->description }}</td>
+                                    <td >{{ $order->description }}</td>
                                     <td>
                                         @if ($order->active == 1)
                                             <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>

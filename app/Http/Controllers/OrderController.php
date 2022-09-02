@@ -65,6 +65,7 @@ class OrderController extends Controller
         $data['main_title'] = ' مصحلة المياه';
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
+        $data['users'] = User::all();
         $order = Order::findOrFail($id);
         $data['department'] = $order->department;
         $data['departments'] = Department::all();

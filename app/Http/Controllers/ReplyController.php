@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BuyOrder;
 use App\Models\Order;
 use App\Models\Reply;
 use Illuminate\Http\Request;
@@ -75,5 +76,20 @@ class ReplyController extends Controller
         $data['sub_of_title'] = 'قسم الصيانة';
         $order = Reply::findOrFail($id);
         return view('maintenance.replies.edit', ['order' => $order])->with($data);
+    }
+
+    public function buyorder_insert(Request $request){
+
+        $arraylength = count( $request->arr[0]);
+        for ($i=0 ; $i<$arraylength ; $i++){
+            BuyOrder::create([
+                'reply_id'=> $request->order_id,
+                'items'=> $request->arr[$i][0],
+                'quantity'=> json_encode( (int)$request->arr[$i][1]),
+                'price'=> json_encode( (int)$request->arr[$i][2]),
+            ]);
+        }
+        $message = array('message' => 'تم اضافة طلب الشراء بنجاح!', 'title' => 'Updated');
+        return response()->json($message);
     }
 }

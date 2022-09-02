@@ -28,7 +28,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
         type="text/css" />
@@ -108,7 +108,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- end  css toastr -->
 </head>
 <!-- END HEAD -->
-
+    @livewireStyles
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
     <!-- BEGIN HEADER -->
@@ -317,7 +317,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     ردود طلبات الصيانة
                                 </a>
                             </li>
-                        
+
                         </ul>
                     </li>
                 </ul>
@@ -507,8 +507,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- pulsate add -->
 <script src="{{ asset('') }}assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
 
-
-
 <!-- end toastr -->
 <script type="text/javascript">
     $(function() {
@@ -565,7 +563,7 @@ License: You must have a valid license purchased only from themeforest(the above
     $(document).ajaxStop($.unblockUI);
 </script>
 
-
+    @livewireScripts
 <!-- END JAVASCRIPTS -->
 </body>
 

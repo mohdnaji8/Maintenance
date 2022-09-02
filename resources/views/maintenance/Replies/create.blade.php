@@ -1,11 +1,8 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="portlet light portlet-fit bordered">
+    <div class="portlet light portlet-fit ">
         <div class="portlet-body">
-            <form action="{{route('admin.replies.store')}}" method="POST">
-                @csrf
-                @include('maintenance.replies.form')
-            </form>
+            @include('maintenance.replies.form')
         </div>
     </div>
     <script src="{{asset('')}}assets/jquery-3.0.0.js"></script>
