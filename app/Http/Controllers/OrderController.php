@@ -75,8 +75,8 @@ class OrderController extends Controller
     }
     public function update(Request $request, Order $order)
     {
-        Order::create($request->all());
-        return redirect()->route('orders.index')
+        $order->update($request->all());
+        return redirect()->route('admin.orders.index')
             ->with('done', 'تمت اضافة الطلب بنجاح');
     }
 }
