@@ -10,6 +10,11 @@
                         {{ $department->name }}</option>
                 @endforeach
             </select>
+            @error('requester_id')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -24,6 +29,11 @@
                         {{ $circle->name }}</option>
                 @endforeach
             </select>
+            @error('circle_id')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
 
@@ -34,6 +44,11 @@
         <div class="col-md-2">
             <input type="text" name="employee" class="form-control" placeholder="Enter text" style="width: 215px"
                 value="{{ old('employee', $order->employee) }}">
+            @error('employee')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -42,6 +57,11 @@
         <div class="col-md-2">
             <input type="date" value="{{ old('date', $order->date) }}" name="date" class="form-control"
                 placeholder="Enter text" style="width: 215px">
+            @error('date')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
 </div>
@@ -51,6 +71,11 @@
         <div class="col-md-2">
             <input type="number" name="building" value="{{ old('building', $order->building) }}" class="form-control"
                 style="width: 215px" placeholder="Enter text">
+            @error('building')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -68,6 +93,11 @@
                 <option value="الرابع" {{ old('floor_number', $order->floor_number) == 'الرابع' ? 'selected' : '' }}>
                     الرابع</option>
             </select>
+            @error('floor_number')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
 </div>
@@ -77,6 +107,11 @@
         <div class="col-md-2">
             <input type="number" name="room_number" value="{{ old('room_number', $order->room_number) }}"
                 class="form-control" style="width: 215px" placeholder="Enter text">
+            @error('room_number')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -103,6 +138,11 @@
                 <option value="أخرى"
                     {{ old('maintenance_type', $order->maintenance_type) == 'أخرى' ? 'selected' : '' }}>أخرى</option>
             </select>
+            @error('maintenance_type')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
 </div>
@@ -112,6 +152,11 @@
         <div class="col-md-2">
             <input type="number" name="phone" value="{{ old('phone', $order->phone) }}" class="form-control"
                 style="width: 215px" placeholder="Enter text">
+            @error('phone')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-md-1"></div>
@@ -126,14 +171,23 @@
                         {{ $user->name }}</option>
                 @endforeach
             </select>
+            @error('user_id')
+                <div style="color: red">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
-
 </div>
 <div class="row">
     <div class="form-group col-md-5">
         <label class="col-md-2 control-label">الوصف </label>
         <textarea name="description" id="" cols="51" rows="5"> {{ old('description', $order->description) }} </textarea>
+        @error('description')
+            <div style="color: red">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
     <div class="col-md-1"></div>
     <div class="form-group col-md-2">

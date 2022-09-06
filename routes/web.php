@@ -28,11 +28,7 @@ Route::get('/', [OrderController::class, 'index'])->middleware('auth');
 
 
 //Route::get('/maintenance',[MaintenanceController::class, 'index']);
-
-
 //Route::resource('/orders', OrderController::class);
-
-
 Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/orders', [AuthenticatedSessionController::class, 'create']);
@@ -48,4 +44,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
     Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
     Route::post('/reply/buyorder', [ReplyController::class, 'buyorder_insert'])->name('buyorder.store');
-});  
+});

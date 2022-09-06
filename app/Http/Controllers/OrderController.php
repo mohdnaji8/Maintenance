@@ -21,7 +21,7 @@ class OrderController extends Controller
         // $order =  new Order();
         // $data['department'] = $order->department;
         $orders = Order::with('circle', 'department')->get();
-        return view('maintenance.orders.index',['orders' => $orders])->with($data);
+        return view('maintenance.orders.index', ['orders' => $orders])->with($data);
     }
     public function create()
     {
@@ -41,6 +41,7 @@ class OrderController extends Controller
     //  return view('maintenance.orders.create', compact('order'))->with($data);
     public function store(Request $request)
     {
+        $request->validate($this->rules(), $this->messages());
         Order::create($request->all());
 
         return redirect()->route('admin.orders.index')
@@ -75,8 +76,32 @@ class OrderController extends Controller
     }
     public function update(Request $request, Order $order)
     {
+        $request->validate($this->rules(), $this->messages());
         $order->update($request->all());
         return redirect()->route('admin.orders.index')
             ->with('done', 'تمت اضافة الطلب بنجاح');
+    }
+
+    public function rules()
+    {
+        return [
+            'requester_id' => ['required'],
+            'employee' => ['required'],
+            'date' => ['required'],
+            'building' => ['required'],
+            'maintenance_type' => ['required'],
+            'room_number' => ['required', 'numeric'],
+            'floor_number' => ['required', 'numeric'],
+            'circle_id' => ['required'],
+            'user_id' => ['required'],
+            'phone' => ['required', 'numeric'],
+            'description' => ['required']
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'هذاالحقل مطلوب',
+        ];
     }
 }
