@@ -18,9 +18,10 @@ class OrderController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
         $data['departments'] = Department::all();
+        $data['users'] = User::all();
         // $order =  new Order();
         // $data['department'] = $order->department;
-        $orders = Order::with('circle', 'department')->get();
+        $orders = Order::with('circle', 'department','user')->get();
         return view('maintenance.orders.index', ['orders' => $orders])->with($data);
     }
     public function create()
@@ -112,7 +113,7 @@ class OrderController extends Controller
             'building' => ['required'],
             'maintenance_type' => ['required'],
             'room_number' => ['required', 'numeric'],
-            'floor_number' => ['required', 'numeric'],
+            'floor_number' => ['required'],
             'circle_id' => ['required'],
             'user_id' => ['required'],
             'phone' => ['required', 'numeric'],

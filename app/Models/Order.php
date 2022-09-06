@@ -16,16 +16,21 @@ class Order extends Model
 
     public function circle()
     {
-        return $this->belongsTo(Circle::class, 'circle_id', 'id');
+        return $this->belongsTo(Circle::class, 'circle_id', 'id')->withDefault();
     }
 
     public function department()
     {
-        return $this->belongsTo(Department::class, 'requester_id', 'id');
+        return $this->belongsTo(Department::class, 'requester_id', 'id')->withDefault();
     }
 
     public function reply()
     {
         return $this->hasMany(Reply::class, 'order_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(Reply::class, 'user_id', 'id')->withDefault();
     }
 }

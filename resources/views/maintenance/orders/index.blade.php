@@ -127,11 +127,9 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>
-
     <!--Start view Modal-->
     <!--Start view Modal-->
     <div class="modal fade" id="editModal" data-backdrop="static" tabindex="-1" role="dialog"
