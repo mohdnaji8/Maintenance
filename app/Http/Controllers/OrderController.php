@@ -82,6 +82,27 @@ class OrderController extends Controller
             ->with('done', 'تمت اضافة الطلب بنجاح');
     }
 
+    public function archive($id)
+    {
+        $order = Order::find($id);
+        $order->delete();
+        return redirect()->route('admin.orders.archived')->with('success', 'Order Archived');
+    }
+
+    public function getArchived()
+    {
+        $data['content'] = 'index';
+        $data['TITLE'] = 'قسم الصيانة';
+        $data['main_title'] = ' مصحلة المياه';
+        $data['sub_title'] = 'الخدمات الاكترونية';
+        $data['sub_of_title'] = 'قسم الصيانة';
+        $data['departments'] = Department::all();
+        // $order =  new Order();
+        // $data['department'] = $order->department;
+        $orders = Order::onlyTrashed()->with('circle', 'department')->get();
+        return view('maintenance.orders.archived', ['orders' => $orders])->with($data);
+    }
+
     public function rules()
     {
         return [

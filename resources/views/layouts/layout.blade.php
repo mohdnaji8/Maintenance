@@ -108,7 +108,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- end  css toastr -->
 </head>
 <!-- END HEAD -->
-    @livewireStyles
+@livewireStyles
 
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
     <!-- BEGIN HEADER -->
@@ -136,43 +136,42 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
-                    @if(Auth::user())
-                    <li class="dropdown dropdown-user">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                            data-close-others="true">
+                    @if (Auth::user())
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
+                                data-hover="dropdown" data-close-others="true">
 
-                            <i class="icon-user"></i>
-                            <span class="username username-hide-on-mobile">
+                                <i class="icon-user"></i>
+                                <span class="username username-hide-on-mobile">
 
                                     {{ Auth::user()->name }}
 
-                            </span>
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-default">
-                            <li class="divider">
-                            </li>
+                                </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li class="divider">
+                                </li>
 
-                            <li >
-                                <div style="margin-right: 10%">
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <x-dropdown-link :href="route('logout')"
-                                                         onclick="event.preventDefault();
+                                <li>
+                                    <div style="margin-right: 10%">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <x-dropdown-link :href="route('logout')"
+                                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
-                                    </form>
-                                </div>
+                                                {{ __('Log Out') }}
+                                            </x-dropdown-link>
+                                        </form>
+                                    </div>
 
-                            </li>
-                        </ul>
-                    </li>
+                                </li>
+                            </ul>
+                        </li>
                     @else
                         <div style="margin-top: 10%">
-                            <a href="{{route('login')}}" class="btn green">Login</a>
+                            <a href="{{ route('login') }}" class="btn green">Login</a>
                         </div>
-
                     @endif
                     <!-- END USER LOGIN DROPDOWN -->
                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
@@ -301,6 +300,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <i class="fa fa-plus"></i>
                                     اضافة طلب
                                 </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.orders.archived') }}">
+                                    <i class="fa fa-plus"></i>
+                                    الطلبات المنجزة </a>
                             </li>
                         </ul>
                     </li>

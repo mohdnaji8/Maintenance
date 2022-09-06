@@ -98,7 +98,7 @@
                                     <td>{{ $order->room_number }}</td>
                                     <td hidden>{{ $order->id }}</td>
                                     <td>{{ $order->phone }}</td>
-                                    <td>{{ $order->description }}</td>
+                                    <td >{{ $order->description }}</td>
                                     <td>
                                         @if ($order->active == 1)
                                             <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>
@@ -113,14 +113,9 @@
                                             class="btn editingTRbutton btn-circle green btn-sm ">
                                             <i class="fa fa-edit"></i> عرض </button>
                                     </td>
-                                    <td class="inline-block"><a class="btn btn-danger btn-circle btn-sm "
+                                    <td><a class="btn btn-danger btn-circle btn-sm "
                                             href="{{ route('admin.replies.create', $order->id) }}"> <i
-                                                class="fa fa-trash"></i> رد</a>
-                                        <form action="{{ route('admin.orders.archive', $order->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-success">أرشفة</button>
-                                        </form>
+                                                class="fa fa-trash"></i> رد</a>x
                                     </td>
                                 </tr>
                             @endforeach

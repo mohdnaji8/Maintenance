@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
         'requester_id', 'employee', 'date', 'building', 'maintenance_type',
         'room_number', 'floor_number',  'circle_id', 'user_id', 'phone', 'description'

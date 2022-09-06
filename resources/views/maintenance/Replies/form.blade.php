@@ -24,7 +24,7 @@
                 <label class="col-md-2 control-label">نوع الصيانة </label>
                 <div class="col-md-2">
                     <select name="maintenance_type"  class="if_checkbox_value" id="maintenance_type1" style="width: 215px">
-                        <option value="0">اختر نوع الصيانة</option>
+                        <option value="">اختر نوع الصيانة</option>
                         <option value="طلب شراء" {{ $reply->floor_number == 'طلب شراء' ? 'selected' : '' }}>طلب شراء</option>
                         <option value="عقد" {{ $reply->floor_number == 'عقد' ? 'selected' : '' }}>عقد</option>
                         <option value="فاتورة" {{ $reply->floor_number == 'فاتورة' ? 'selected' : '' }}>فاتورة</option>
