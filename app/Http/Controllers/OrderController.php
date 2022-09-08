@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -21,7 +22,9 @@ class OrderController extends Controller
         $data['users'] = User::all();
         // $order =  new Order();
         // $data['department'] = $order->department;
-        $orders = Order::with('circle', 'department','user')->get();
+
+        // $orders = Order::with('circle', 'department','user')->get();
+        $orders = Order::with('circle', 'department','user')->where('user_id',auth()->user()->id)->get();
         return view('maintenance.orders.index', ['orders' => $orders])->with($data);
     }
     public function create()

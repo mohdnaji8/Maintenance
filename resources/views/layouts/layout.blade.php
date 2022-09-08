@@ -321,7 +321,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     ردود طلبات الصيانة
                                 </a>
                             </li>
-
                         </ul>
                     </li>
                 </ul>
