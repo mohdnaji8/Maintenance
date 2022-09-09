@@ -19,12 +19,13 @@ class OrderController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
         $data['departments'] = Department::all();
+        $data['user'] = new User();
         $data['users'] = User::all();
+
         // $order =  new Order();
         // $data['department'] = $order->department;
-
         // $orders = Order::with('circle', 'department','user')->get();
-        $orders = Order::with('circle', 'department','user')->where('user_id',auth()->user()->id)->get();
+        $orders = Order::with('circle', 'department', 'user')->where('user_id', auth()->user()->id)->get();
         return view('maintenance.orders.index', ['orders' => $orders])->with($data);
     }
     public function create()

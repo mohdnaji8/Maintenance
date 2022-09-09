@@ -17,6 +17,7 @@ use App\Http\Controllers\ReplyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -35,8 +36,8 @@ Route::get('/orders', [AuthenticatedSessionController::class, 'create']);
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/circles', CircleController::class);
- Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
-    Route::get('/order/{order_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
+    Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
+    Route::get('/order/{order_id}/user/{user_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
     Route::post('/replies/store', [ReplyController::class, 'store'])->name('replies.store');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
