@@ -113,10 +113,11 @@
                                             class="btn editingTRbutton btn-circle green btn-sm ">
                                             <i class="fa fa-edit"></i> عرض </button>
                                     </td>
-                                    <td ><a class="btn btn-danger btn-circle btn-sm "
-                                            href="{{ route('admin.replies.create', $order->id) }}"> <i
-                                                class="fa fa-trash"></i> رد</a>
-                                        <form action="{{ route('admin.orders.archive', $order->id) }}" method="POST"  class="d-inline-block">
+                                    <td><a class="btn btn-danger btn-circle btn-sm "
+                                            href="{{ route('admin.replies.create', [$order->id, Auth::user()->id]) }}">
+                                            <i class="fa fa-trash"></i> رد</a>
+                                        <form action="{{ route('admin.orders.archive', $order->id) }}" method="POST"
+                                            class="d-inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-success btn-circle">أرشفة</button>

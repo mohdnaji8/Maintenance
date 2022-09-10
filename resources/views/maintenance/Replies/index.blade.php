@@ -24,16 +24,17 @@
                                 <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
                                     style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
                                     tabindex="0" class="sorting_asc">
-                                   الملاحظات
+                                    الملاحظات
                                 </th>
                                 <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
                                     style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
                                     tabindex="0" class="sorting_asc">
-                                        حالة الطلب
+                                    حالة الطلب
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($replies as $key => $reply)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>

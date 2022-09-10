@@ -18,6 +18,7 @@ class ReplyController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
 
+<<<<<<< HEAD
         $orders = Order::where('user_id', auth()->user()->id)->get();
 
         foreach ($orders as $order)
@@ -27,9 +28,17 @@ class ReplyController extends Controller
        //die(print_r($replies));
         // $replies = Reply::where('id', $order->reply->id)->get();
         // $replies = Reply::all();
+=======
+        // $order =  new Order();
+        // $replies = $order->reply;
+        // $data['order'] = $order->reply;
+        //$order = Order::where('user_id',auth()->user()->id)->get();
+        $replies = Reply::with('order', 'user')->where('user_id', auth()->user()->id)->get();
+        // $replies = Reply::all();z
+>>>>>>> eec56526d4872c18cc732e0b3c4bc8c0b48676a0
         return view('maintenance.replies.index', ['replies' => $replies])->with($data);
     }
-    public function create($order_id)
+    public function create($order_id, $user_id)
     {
 
         $data['content'] = 'index';
@@ -39,6 +48,7 @@ class ReplyController extends Controller
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
         $data['reply'] =  new Reply();
         $data['order_id'] = $order_id;
+        $data['$user_id'] = $user_id;
         return view('maintenance.replies.create')->with($data);
     }
     //  return view('maintenance.orders.create', compact('order'))->with($data);
@@ -58,6 +68,7 @@ class ReplyController extends Controller
                 'foundation' => $request->foundation,
                 'maintenance_type' => $request->maintenance_type,
                 'noticies' => $request->noticies,
+                'user_id' => $request->user_id,
             ]);
         } else {
             Reply::create($request->all());
