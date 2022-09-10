@@ -46,5 +46,14 @@ class Order extends Model
     {
         return $this->belongsTo(Reply::class, 'user_id', 'id')->withDefault();
     }
+    public function user_order()
+    {
+        $order = Order::where('user_id', auth()->user()->id)->get();
+        foreach ($order as $or)
+        {
+           $data[]=  $or['id'];
+        }
+       return $data;
+    }
 
 }

@@ -38,13 +38,13 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>
-                                        {{ $reply->order_id }}
+                                        {{ $reply[0][0][0]->order_id }}
                                     </td>
                                     <td>
-                                        {{ $reply->noticies }}
+                                        {{ $reply[0][0][0]->noticies }}
                                     </td>
                                     <td>
-                                        @if ($reply->done == 1)
+                                        @if ($reply[0][0][0]->done == 1)
                                             <span class="badge py-2 px-2 fs-7 badge-success ">تم الانجاز</span>
                                         @else
                                             <span class="badge py-2 px-2 fs-7 badge-danger">غير منجز</span>

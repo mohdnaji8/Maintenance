@@ -37,7 +37,7 @@ class OrderController extends Controller
         $data['sub_of_title'] = 'قسم الصيانة- تقديم طلب';
         $data['order'] =  new Order();
         $data['departments'] = Department::all();
-        $data['users'] = User::all();
+        $data['users'] = User::where('isAdmin', 1)->get();
         $data['circles'] = Circle::all();
 
         return view('maintenance.orders.create')->with($data);

@@ -18,11 +18,14 @@ class ReplyController extends Controller
         $data['sub_title'] = 'الخدمات الاكترونية';
         $data['sub_of_title'] = 'قسم الصيانة';
 
-         $order =  new Order();
-        // $data['order'] = $order->reply;
-        //$order = Order::where('user_id',auth()->user()->id)->get();
-        die($order->where('user_id',auth()->user()->id)->get());
-       // $replies = Reply::with('order')->where('reply_id', auth()->user()->id)->get();
+        $orders = Order::where('user_id', auth()->user()->id)->get();
+
+        foreach ($orders as $order)
+        {
+            $replies[] = array( Reply::where('order_id',  $order['id'])->get());
+        }
+       //die(print_r($replies));
+        // $replies = Reply::where('id', $order->reply->id)->get();
         // $replies = Reply::all();
         return view('maintenance.replies.index', ['replies' => $replies])->with($data);
     }
@@ -59,7 +62,7 @@ class ReplyController extends Controller
         } else {
             Reply::create($request->all());
         }
-        return redirect()->route('admin.replies.index')
+        return redirect()->route('admin.orders.index')
             ->with('done', 'تمت اضافة الرد بنجاح');
     }
 

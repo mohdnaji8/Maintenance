@@ -308,21 +308,6 @@ License: You must have a valid license purchased only from themeforest(the above
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item start  selected">
-                        <a href="{{ route('admin.replies.index') }}" class="nav-link nav-toggle")>
-                            <i class=""></i>
-                            <span class="title"> الردود</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu ">
-                            <li>
-                                <a href="{{ route('admin.replies.index') }}">
-                                    <i class="fa fa-home"></i>
-                                    ردود طلبات الصيانة
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
 
 
