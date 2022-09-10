@@ -101,17 +101,21 @@
                                     <td>{{ $order->description }}</td>
                                     <td>
                                         @if ($order->active == 1)
-                                            <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-success ">تم الانجاز</span>
                                         @else
-                                            <span class="badge py-2 px-2 fs-7 badge-danger">غير فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-danger"> قيد التنفيذ</span>
                                         @endif
                                     </td>
                                     <td>{{ $order->date }}</td>
                                     <td hidden>{{ $order->id }}</td>
                                     <td>
-                                        <button data-toggle="modal" data-target="#editModal"
+                                        {{-- <button data-toggle="modal" data-target="#editModal"
                                             class="btn editingTRbutton btn-circle green btn-sm ">
-                                            <i class="fa fa-edit"></i> عرض </button>
+                                            <i class="fa fa-edit"></i> عرض </button> --}}
+                                            <form action="{{route('admin.orders.show',$order->id)}}" method="GET">
+                                                @csrf
+                                                <button class="btn btn-primary">عرض</button>
+                                            </form>
                                     </td>
                                     <td><a class="btn btn-danger btn-circle btn-sm "
                                             href="{{ route('admin.replies.create', [$order->id, Auth::user()->id]) }}">
