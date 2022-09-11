@@ -77,12 +77,14 @@
                                     </td>
                                     @if(Auth::user()->isAdmin ==1)
                                     <td>
+                                        @if(Auth::user()->id !== $user->id)
                                         <form action="{{route('admin.users.update', $user->id )}}" method="POST">
                                             @csrf
                                             @method('PUT')
                                             <input type="hidden" value="{{ $user->isAdmin }}" name="isAdmin">
                                             <button type="submit" class="btn btn-warning">تعديل</button>
                                         </form>
+                                        @endif
                                     </td>
                                     @endif
                                 </tr>
