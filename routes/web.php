@@ -6,6 +6,7 @@ use App\Http\Controllers\CircleController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::get('/orders', [AuthenticatedSessionController::class, 'create']);
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/circles', CircleController::class);
+    Route::resource('/users', UserController::class);
     Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
     Route::get('/order/{order_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
     Route::post('/replies/store', [ReplyController::class, 'store'])->name('replies.store');
@@ -45,6 +47,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
     Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
     Route::get('/orders/{id}/archive', [OrderController::class, 'archive'])->name('orders.archive');
+    Route::get('/orders/{order}/show', [OrderController::class, 'show'])->name('orders.show');
+    Route::delete('/orders/{id}', [OrderController::class, 'archive'])->name('orders.archive');
     Route::get('/orders/archived', [OrderController::class, 'getArchived'])->name('orders.archived');
     Route::post('/reply/buyorder', [ReplyController::class, 'buyorder_insert'])->name('buyorder.store');
 });

@@ -13,8 +13,5 @@ class Reply extends Model
     {
         return $this->belongsTo(Order::class, 'order_id', 'id')->withDefault();
     }
-    public function user()
-    {
-        return $this->belongsTo(User::class)->withDefault();
-    }
+
 }
