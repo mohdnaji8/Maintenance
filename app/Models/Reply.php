@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-    protected $fillable = ['order_id','user_id', 'done', 'foundation', 'maintenance_type', 'noticies'];
+    protected $fillable = ['order_id', 'done', 'foundation', 'maintenance_type', 'noticies'];
 
     public function order()
     {

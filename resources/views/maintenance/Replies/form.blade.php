@@ -8,8 +8,7 @@
     <form action="{{ route('admin.replies.store') }}" method="POST">
         @csrf
         <div class="row">
-            <input type="hidden" id="order_id" name="order_id" value="{{ $order_id }}">\
-            <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
+            <input type="hidden" id="order_id" name="order_id" value="{{ $order_id }}">
             <div class="form-group">
                 <label class="col-md-2 control-label"> تم الانجاز </label>
                 <div class="col-md-2">
@@ -112,67 +111,29 @@
         </table>
     </div>
 </div>
-<div class="col-md-6" id="make_contract">
-    <div class="header">
-        <h3>عقد</h3>
-    </div>
-    <div class="row">
-        <table id="">
-            <tr>
-                <td><input type="text" name="links"></td>
-                <td><input type="text" name="keywords"></td>
-                <td><input type="text" name="violationtype"></td>
-                <td><input type="button" class="button" value="Add another line" onclick="addField();"></td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div class="col-md-6" id="make_invoice">
-    <div class="header">
-        <h3>فاتورة</h3>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <label class="col-md-2 control-label"> فاتورة </label>
-            <div class="col-md-2">
-                <input type="text" id="" name="order" class="form-control" placeholder="Enter text"
-                    style="width: 215px" value="">
-            </div>
-        </div>
-    </div>
-</div>
 <script src="{{ asset('') }}assets/jquery-3.0.0.js"></script>
 <script>
     window.onload = function() {
         $("#buy_order").hide();
-        $("#make_contract").hide();
-        $("#make_invoice").hide();
 
     }
     $("#maintenance_type1").change(function() {
         if ($(this).val() == "0") {
             $("#buy_order").hide();
-            $("#make_contract").hide();
-            $("#make_invoice").hide();
             $("#main_submit").show();
         }
         if ($(this).val() == "طلب شراء") {
             $("#buy_order").show();
-            $("#make_contract").hide();
-            $("#make_invoice").hide();
             $("#main_submit").hide();
         }
         if ($(this).val() == "عقد") {
             $("#buy_order").hide();
-            $("#make_contract").show();
-            $("#make_invoice").hide();
-            $("#main_submit").hide();
+            $("#main_submit").show();
+
         }
         if ($(this).val() == "فاتورة") {
             $("#buy_order").hide();
-            $("#make_contract").hide();
-            $("#make_invoice").show();
-            $("#main_submit").hide();
+            $("#main_submit").show();
         }
     });
 
@@ -207,7 +168,6 @@
                 toastr.success('تمت اضافة طلب الشراء بنجاح');
             },
             error: function(response) {
-
                 $("#main_submit").show();
                 document.getElementById("myTable").innerHTML = "";
                 toastr.success('تم اضافة طلب الشراء بنجاح');
@@ -254,12 +214,12 @@
     function valueChanged() {
         if ($('#done').is(":checked")) {
             $(".ifcheckbox").show();
+            $("#main_submit").show();
         } else {
             $(".ifcheckbox").hide();
             $(".if_checkbox_value").val('');
             $("#buy_order").hide();
-            $("#make_contract").hide();
-            $("#make_invoice").hide();
+            $("#main_submit").show();
         }
     }
 </script>

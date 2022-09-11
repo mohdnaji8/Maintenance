@@ -48,9 +48,15 @@ class OrderController extends Controller
     {
         $request->validate($this->rules(), $this->messages());
         Order::create($request->all());
+        if (auth()->user()){
+            return redirect()->route('admin.orders.index')
+                ->with('done', 'تمت اذافة الطلب بنجاح');
+        }else
+        {
+            return redirect()->back()
+                ->with('done', 'تمت اذافة الطلب بنجاح');
+        }
 
-        return redirect()->route('admin.orders.index')
-            ->with('done', 'تمت اذافة الطلب بنجاح');
     }
 
     public function show(Order $order)
@@ -91,7 +97,7 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
         $order->delete();
-        return redirect()->route('admin.orders.archived')->with('success', 'Order Archived');
+        return redirect()->route('admin.orders')->with('success', 'Order Archived');
     }
 
     public function getArchived()

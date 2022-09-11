@@ -37,14 +37,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('/departments', DepartmentController::class);
     Route::resource('/circles', CircleController::class);
     Route::get('/replies', [ReplyController::class, 'index'])->name('replies.index');
-    Route::get('/order/{order_id}/user/{user_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
+    Route::get('/order/{order_id}/reply', [ReplyController::class, 'create'])->name('replies.create');
     Route::post('/replies/store', [ReplyController::class, 'store'])->name('replies.store');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
     Route::get('/orders/{id}/edit', [OrderController::class, 'edit'])->name('orders.edit');
     Route::post('/orders/store', [OrderController::class, 'store'])->name('orders.store');
     Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
-    Route::delete('/orders/{id}', [OrderController::class, 'archive'])->name('orders.archive');
+    Route::get('/orders/{id}/archive', [OrderController::class, 'archive'])->name('orders.archive');
     Route::get('/orders/archived', [OrderController::class, 'getArchived'])->name('orders.archived');
     Route::post('/reply/buyorder', [ReplyController::class, 'buyorder_insert'])->name('buyorder.store');
 });

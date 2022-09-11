@@ -77,11 +77,7 @@
                                 </th>
                                 <th id="edit_th" aria-label=" Edit : activate to sort column ascending"
                                     style="width: 81px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
-                                    tabindex="0" class="sorting"> عرض
-                                </th>
-                                <th id="delete_th" aria-label=" Delete : activate to sort column ascending"
-                                    style="width: 81px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
-                                    tabindex="0" class="sorting"> رد
+                                    tabindex="0" class="sorting"> العمليات
                                 </th>
                             </tr>
                         </thead>
@@ -101,27 +97,30 @@
                                     <td>{{ $order->description }}</td>
                                     <td>
                                         @if ($order->active == 1)
-                                            <span class="badge py-2 px-2 fs-7 badge-success ">فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-success ">تم الانجاز</span>
                                         @else
-                                            <span class="badge py-2 px-2 fs-7 badge-danger">غير فعال</span>
+                                            <span class="badge py-2 px-2 fs-7 badge-warning">قيد التنفيذ </span>
                                         @endif
                                     </td>
                                     <td>{{ $order->date }}</td>
                                     <td hidden>{{ $order->id }}</td>
-                                    <td>
+                                    <td style="width: 400px">
                                         <button data-toggle="modal" data-target="#editModal"
-                                            class="btn editingTRbutton btn-circle green btn-sm ">
-                                            <i class="fa fa-edit"></i> عرض </button>
-                                    </td>
-                                    <td><a class="btn btn-danger btn-circle btn-sm "
-                                            href="{{ route('admin.replies.create', [$order->id, Auth::user()->id]) }}">
-                                            <i class="fa fa-trash"></i> رد</a>
-                                        <form action="{{ route('admin.orders.archive', $order->id) }}" method="POST"
-                                            class="d-inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-success btn-circle">أرشفة</button>
-                                        </form>
+                                            class="btn editingTRbutton btn btn-success btn-circle btn-sm ">
+                                            <i class="fa fa-edit">عرض </i>
+                                        </button>
+                                        <a class="btn btn-warning btn-circle btn-sm  "
+                                            href="{{ route('admin.replies.create', $order->id) }}">
+                                              <i class="fa fa-arrow-left">
+                                                رد
+                                            </i>
+                                        </a>
+                                        <a class="btn btn-danger btn-circle btn-sm  "
+                                            href="{{  route('admin.orders.archive', $order->id) }}">
+                                              <i class="fa fa-arrow-left">
+                                                  أرشفة
+                                            </i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -234,9 +233,9 @@
                 //the <tr> variable is use to set the parentNode from "ele
                 var tr = ele.target.parentNode.parentNode;
 
-                //I get the value from the cells (td) using the parentNode (var tr)
 
                 var department = tr.cells[1].textContent.replace(/\s+/g, '');
+                alert("aa");
                 var employee = tr.cells[2].textContent.replace(/\s+/g, '');
                 var building = tr.cells[3].textContent.replace(/\s+/g, '');
                 var floor_number = tr.cells[4].textContent.replace(/\s+/g, '');
@@ -246,7 +245,8 @@
                 var description = tr.cells[8].textContent.replace(/\s+/g, '');
                 var date = tr.cells[10].textContent.replace(/\s+/g, '');
                 var id = tr.cells[11].textContent.replace(/\s+/g, '');
-
+                alert(department);
+                alert(employee);
                 var url = $('#base_url').val();
 
                 $('#department').val(department);
