@@ -7,10 +7,11 @@
                     <div class="col-md-6">
                         <div class="btn-group">
                             <!-- Button trigger modal-->
-                            <button type="button" class="btn green" data-toggle="modal" data-target="#exampleModalLong">
-                                <a href="{{ route('admin.circles.create') }}"> اضافة مستخدم جديد</a>
-                                <i class="fa fa-plus"></i>
-                            </button>
+                                 <a  class="btn green" href="{{ route('admin.circles.create') }}">
+                                     <i class="fa fa-plus"></i>
+                                     اضافة مستخدم جديد</a>
+
+
                         </div>
                     </div>
 
@@ -46,8 +47,15 @@
                                 <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
                                     style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
                                     tabindex="0" class="sorting_asc">
-                                    المكان
+                                    الوظيفة
                                 </th>
+                                @if(Auth::user()->isAdmin ==1)
+                                <th aria-label=" Username : activate to sort column descending" aria-sort="ascending"
+                                    style="width: 120px;" colspan="1" rowspan="1" aria-controls="sample_editable_1"
+                                    tabindex="0" class="sorting_asc">
+                                    تعديل
+                                </th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +65,26 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->isAdmin }}</td>
+                                    <td>
+                                        @if ($user->isAdmin == 1)
+                                            <span class="badge py-2 px-2 fs-7 badge-success ">مسؤول</span>
+                                        @else
+
+                                            <span class="badge py-2 px-2 fs-7 badge-warning">مستخدم  </span>
+
+
+                                        @endif
+                                    </td>
+                                    @if(Auth::user()->isAdmin ==1)
+                                    <td>
+                                        <form action="{{route('admin.users.update', $user->id )}}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <input type="hidden" value="{{ $user->isAdmin }}" name="isAdmin">
+                                            <button type="submit" class="btn btn-warning">تعديل</button>
+                                        </form>
+                                    </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

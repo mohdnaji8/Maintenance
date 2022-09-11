@@ -240,6 +240,27 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                     </li>
                     <li class="nav-item start  selected">
+                        <a href="{{ route('admin.users.index') }}" class="nav-link nav-toggle">
+                            <i class=""></i>
+                            <span class="title">المستخدمون</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu ">
+                            <li>
+                                <a href="{{ route('admin.users.index') }}">
+                                    <i class="fa fa-home"></i>
+                                    المستخدمون
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.users.create') }}">
+                                    <i class="fa fa-plus"></i>
+                                    مستخدم جديد
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item start  selected">
                         <a href="{{ route('admin.circles.index') }}" class="nav-link nav-toggle">
                             <i class=""></i>
                             <span class="title">الدوائر</span>

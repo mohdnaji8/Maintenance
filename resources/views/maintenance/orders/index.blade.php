@@ -102,8 +102,6 @@
 
                                             <span class="badge py-2 px-2 fs-7 badge-warning">قيد التنفيذ </span>
 
-                                            <span class="badge py-2 px-2 fs-7 badge-danger"> قيد التنفيذ</span>
-
                                         @endif
                                     </td>
                                     <td>{{ $order->date }}</td>
@@ -126,26 +124,6 @@
                                                   أرشفة
                                             </i>
                                         </a>
-
-                                    <td>
-                                        {{-- <button data-toggle="modal" data-target="#editModal"
-                                            class="btn editingTRbutton btn-circle green btn-sm ">
-                                            <i class="fa fa-edit"></i> عرض </button> --}}
-                                            <form action="{{route('admin.orders.show',$order->id)}}" method="GET">
-                                                @csrf
-                                                <button class="btn btn-primary">عرض</button>
-                                            </form>
-                                    </td>
-                                    <td><a class="btn btn-danger btn-circle btn-sm "
-                                            href="{{ route('admin.replies.create', [$order->id, Auth::user()->id]) }}">
-                                            <i class="fa fa-trash"></i> رد</a>
-                                        <form action="{{ route('admin.orders.archive', $order->id) }}" method="POST"
-                                            class="d-inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-success btn-circle">أرشفة</button>
-                                        </form>
-
                                     </td>
                                 </tr>
                             @endforeach
